@@ -1,73 +1,75 @@
-import React from "react"
-import {View, SafeAreaView, ScrollView, StatusBar} from "react-native"
+import React, {useContext} from "react"
+import {View, SafeAreaView, ScrollView} from "react-native"
 import PropTypes from "prop-types"
 import flow from "lodash/flow"
 import Entypo from "react-native-vector-icons/Entypo"
 import Color from "color"
+import {useRoute} from "@react-navigation/native"
 import themeStyles from "./styles"
 import connect from "./connect"
 import {RowItem, RowSeparator} from "../../components/RowItem"
+import {HeaderBar} from "../../components/HeaderBar"
+import {ThemeContext} from "../../ContextUtils/ThemeContext"
 
 // Themes Component content
-export const Themes = ({themes, changeTheme, defaultTheme, styleableTheme}) => {
-  const colors = Object.keys(themes) || []
+export const Themes = ({themes}) => {
+  const {name} = useRoute()
+  const {styleableTheme, changeTheme, defaultTheme} = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
+
+  const colors = Object.keys(themes) || []
   return (
-    <SafeAreaView style={styles.root}>
-      <StatusBar barStyle="default" backgroundColor={styleableTheme[500]} />
-      <ScrollView>
-        {colors.map((color, index) => (
-          <React.Fragment key={`theme-${index + 1}`}>
-            <RowItem
-              testID={`theme-${index + 1}`}
-              title={`Theme ${index + 1}`}
-              onPress={() => changeTheme(color)}
-              rightIcon={
-                <View
-                  style={{
-                    flexDirection: "row",
-                  }}>
-                  {defaultTheme === color ? (
-                    <View style={{marginRight: 12}}>
-                      <Entypo name="check" size={20} />
-                    </View>
-                  ) : null}
+    <View style={styles.root}>
+      <HeaderBar title={name} />
+      <SafeAreaView>
+        <ScrollView>
+          {colors.map((color, index) => (
+            <React.Fragment key={`theme-${index + 1}`}>
+              <RowItem
+                testID={`theme-${index + 1}`}
+                title={`Theme ${index + 1}`}
+                onPress={() => changeTheme(color)}
+                rightIcon={
                   <View
                     style={{
-                      width: 20,
-                      height: 20,
-                      backgroundColor: color,
-                    }}
-                  />
-                </View>
-              }
-            />
-            <RowSeparator
-              style={{
-                backgroundColor: Color(styleableTheme[500]).darken(0.04).hex(),
-              }}
-            />
-          </React.Fragment>
-        ))}
-      </ScrollView>
-    </SafeAreaView>
+                      flexDirection: "row",
+                    }}>
+                    {defaultTheme === color ? (
+                      <View style={{marginRight: 12}}>
+                        <Entypo
+                          name="check"
+                          size={20}
+                          color={styleableTheme[50]}
+                        />
+                      </View>
+                    ) : null}
+                    <View
+                      style={{
+                        width: 20,
+                        height: 20,
+                        backgroundColor: color,
+                      }}
+                    />
+                  </View>
+                }
+              />
+              <RowSeparator />
+            </React.Fragment>
+          ))}
+        </ScrollView>
+      </SafeAreaView>
+    </View>
   )
 }
 
 // Themes Proptypes
 Themes.propTypes = {
   themes: PropTypes.object,
-  changeTheme: PropTypes.func,
-  defaultTheme: PropTypes.string,
-  styleableTheme: PropTypes.object,
 }
 
 // Themes Default props
 Themes.defaultProps = {
   themes: {},
-  changeTheme: () => {},
-  defaultTheme: "",
-  styleableTheme: {},
 }
 
 export default flow([connect])(Themes)

@@ -29,16 +29,14 @@ RowItem.defaultProps = {
   rightIcon: null,
 }
 
-export const RowSeparator = ({style}) => {
+export const RowSeparator = () => {
   const {styleableTheme} = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
-  return <View style={[styles.separator, style]} />
+  return <View style={styles.separator} />
 }
 
 // RowSeparator Proptypes
-RowSeparator.propTypes = {
-  style: PropTypes.object.isRequired,
-}
+RowSeparator.propTypes = {}
 
 // RowSeparator Default props
 RowSeparator.defaultProps = {}

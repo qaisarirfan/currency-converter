@@ -1,5 +1,4 @@
-import React, {useEffect} from "react"
-import flow from "lodash/flow"
+import React, {useContext, useEffect} from "react"
 
 import {NavigationContainer} from "@react-navigation/native"
 import {createStackNavigator} from "@react-navigation/stack"
@@ -8,13 +7,12 @@ import Home from "../screens/Home"
 import Options from "../screens/Options"
 import Themes from "../screens/Themes"
 import CurrencyList from "../screens/CurrencyList"
-
-import connect from "./connect"
+import {ThemeContext} from "../ContextUtils/ThemeContext"
 
 const OptionsStack = () => {
   const Stack = createStackNavigator()
   return (
-    <Stack.Navigator screenOptions={{headerShown: true}}>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Options" component={Options} />
       <Stack.Screen name="Themes" component={Themes} />
       <Stack.Screen
@@ -28,7 +26,9 @@ const OptionsStack = () => {
   )
 }
 
-const App = ({defaultTheme, changeTheme}) => {
+const App = () => {
+  const {defaultTheme, changeTheme} = useContext(ThemeContext)
+
   useEffect(() => {
     if (defaultTheme) {
       changeTheme(defaultTheme)
@@ -38,20 +38,12 @@ const App = ({defaultTheme, changeTheme}) => {
   const Stack = createStackNavigator()
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Options"
-          component={OptionsStack}
-          options={{headerShown: false}}
-        />
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Options" component={OptionsStack} />
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
 
-export default flow([connect])(App)
+export default App

@@ -5,8 +5,13 @@ import connect from "./connect"
 
 export const ThemeContext = createContext()
 
-export const ThemeContextProvider = ({children, styleableTheme}) => (
-  <ThemeContext.Provider value={{styleableTheme}}>
+export const ThemeContextProvider = ({
+  children,
+  styleableTheme,
+  changeTheme,
+  defaultTheme,
+}) => (
+  <ThemeContext.Provider value={{styleableTheme, changeTheme, defaultTheme}}>
     {children}
   </ThemeContext.Provider>
 )

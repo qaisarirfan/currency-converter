@@ -1,17 +1,23 @@
-import React from "react"
+import React, {useContext} from "react"
 import flow from "lodash/flow"
-import {View, Text, StatusBar, FlatList} from "react-native"
+import {View, FlatList} from "react-native"
 import PropTypes from "prop-types"
+import {useNavigation, useRoute} from "@react-navigation/native"
 import themeStyles from "./styles"
 import {RowItem, RowSeparator} from "../../components/RowItem"
 import connect from "./connect"
+import {ThemeContext} from "../../ContextUtils/ThemeContext"
+import {HeaderBar} from "../../components/HeaderBar"
 
 // CurrencyList Component content
-export const CurrencyList = ({navigation, currencies, styleableTheme}) => {
+export const CurrencyList = ({currencies}) => {
+  const {push} = useNavigation()
+  const {name} = useRoute()
+  const {styleableTheme} = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
   return (
     <View style={styles.root}>
-      <StatusBar barStyle="dark-content" />
+      <HeaderBar title={name} />
       <FlatList
         data={currencies}
         renderItem={({item}) => {
@@ -19,7 +25,7 @@ export const CurrencyList = ({navigation, currencies, styleableTheme}) => {
             <RowItem
               title={item.name}
               onPress={() => {
-                navigation.pop()
+                push("Home")
               }}
               rightIcon={null}
             />
@@ -36,7 +42,6 @@ export const CurrencyList = ({navigation, currencies, styleableTheme}) => {
 // CurrencyList Proptypes
 CurrencyList.propTypes = {
   currencies: PropTypes.object,
-  navigation: PropTypes.object.isRequired,
 }
 
 // CurrencyList Default props

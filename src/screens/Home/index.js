@@ -1,20 +1,24 @@
-import React, {useEffect, useState} from "react"
+import React, {useContext, useEffect, useState} from "react"
 import flow from "lodash/flow"
-import {View, StatusBar, TouchableOpacity, Image, Text} from "react-native"
+import {View, TouchableOpacity, Image, Text} from "react-native"
 import Entypo from "react-native-vector-icons/Entypo"
 import PropTypes from "prop-types"
-import {SafeAreaView} from "react-native-safe-area-context"
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view"
+import {useNavigation} from "@react-navigation/native"
 
 import {KeyboardSpacer} from "../../components/KeyboardSpacer"
 import {ConversionInput} from "../../components/ConversionInput"
 import {ReverseButton} from "../../components/ReverseButton"
 import themeStyles from "./styles"
 import connect from "./connect"
+import HeaderBar from "../../components/HeaderBar"
+import {ThemeContext} from "../../ContextUtils/ThemeContext"
 
 // Home Component content
-export const Home = ({navigation, styleableTheme, getRates}) => {
+export const Home = ({getRates}) => {
+  const {push} = useNavigation()
   const [scrollEnabled, setScrollEnabled] = useState(false)
+  const {styleableTheme} = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
 
   useEffect(() => {
@@ -23,15 +27,18 @@ export const Home = ({navigation, styleableTheme, getRates}) => {
 
   return (
     <View style={styles.root} testID="welcome">
-      <StatusBar barStyle="default" backgroundColor={styleableTheme[500]} />
-      <SafeAreaView style={styles.header}>
-        <TouchableOpacity
-          testID="options_screen_button"
-          onPress={() => navigation.push("Options")}>
-          <Entypo name="cog" size={32} color="#fff" />
-        </TouchableOpacity>
-      </SafeAreaView>
-      <KeyboardAwareScrollView scrollEnabled={scrollEnabled} behavior="padding">
+      <HeaderBar
+        title="Home"
+        isHeaderShow={false}
+        rightContent={
+          <TouchableOpacity
+            testID="options_screen_button"
+            onPress={() => push("Options")}>
+            <Entypo name="cog" size={32} color="#fff" />
+          </TouchableOpacity>
+        }
+      />
+      <KeyboardAwareScrollView testID="home_screen" scrollEnabled={true} behavior="padding">
         <View style={styles.content}>
           <View style={styles.logoContainer}>
             <Image
@@ -63,13 +70,10 @@ export const Home = ({navigation, styleableTheme, getRates}) => {
 
 // Home Proptypes
 Home.propTypes = {
-  navigation: PropTypes.object.isRequired,
-  styleableTheme: PropTypes.object,
+  getRates: PropTypes.func.isRequired,
 }
 
 // Home Default props
-Home.defaultProps = {
-  styleableTheme: {},
-}
+Home.defaultProps = {}
 
 export default flow([connect])(Home)

@@ -9,11 +9,11 @@ const styles = (theme) => {
       justifyContent: "space-between",
       alignItems: "center",
       flexDirection: "row",
-      backgroundColor: "#fff",
+      backgroundColor: theme[300],
     },
     title: {
       fontSize: 16,
-      color: theme[900],
+      color: theme[50],
     },
     separator: {
       height: StyleSheet.hairlineWidth,
