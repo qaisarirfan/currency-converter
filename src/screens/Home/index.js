@@ -1,29 +1,42 @@
-import React, {useContext, useEffect, useState} from "react"
-import flow from "lodash/flow"
-import {View, TouchableOpacity, Image, Text} from "react-native"
+import React, { useContext, useEffect, useState } from "react"
+import { View, TouchableOpacity, Image, Text } from "react-native"
 import Entypo from "react-native-vector-icons/Entypo"
 import PropTypes from "prop-types"
-import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view"
-import {useNavigation} from "@react-navigation/native"
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
+import { useNavigation } from "@react-navigation/native"
 
-import {KeyboardSpacer} from "../../components/KeyboardSpacer"
-import {ConversionInput} from "../../components/ConversionInput"
-import {ReverseButton} from "../../components/ReverseButton"
+import { KeyboardSpacer } from "../../components/KeyboardSpacer"
+import { ConversionInput } from "../../components/ConversionInput"
+import { ReverseButton } from "../../components/ReverseButton"
 import themeStyles from "./styles"
-import connect from "./connect"
 import HeaderBar from "../../components/HeaderBar"
-import {ThemeContext} from "../../ContextUtils/ThemeContext"
+import { ThemeContext } from "../../ContextUtils/ThemeContext"
+import { ConversionContext } from "../../ContextUtils/ConversionContext"
 
 // Home Component content
-export const Home = ({getRates}) => {
-  const {push} = useNavigation()
+export const Home = () => {
+  const { push, navigate } = useNavigation()
   const [scrollEnabled, setScrollEnabled] = useState(false)
-  const {styleableTheme} = useContext(ThemeContext)
+  const { styleableTheme } = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
 
+  const [value, setValue] = useState("100");
+
+  const {
+    getRates,
+    rates,
+    baseCurrency,
+    quoteCurrency,
+    swapCurrency,
+  } = useContext(ConversionContext)
+
+  const conversionRate = rates.find((rate) => rate.name === quoteCurrency) || {}
+
+  console.log(conversionRate)
+
   useEffect(() => {
-    getRates()
-  }, [])
+    getRates(baseCurrency)
+  }, [baseCurrency])
 
   return (
     <View style={styles.root} testID="welcome">
@@ -38,7 +51,10 @@ export const Home = ({getRates}) => {
           </TouchableOpacity>
         }
       />
-      <KeyboardAwareScrollView testID="home_screen" scrollEnabled={true} behavior="padding">
+      <KeyboardAwareScrollView
+        testID="home_screen"
+        scrollEnabled
+        behavior="padding">
         <View style={styles.content}>
           <View style={styles.logoContainer}>
             <Image
@@ -57,9 +73,38 @@ export const Home = ({getRates}) => {
             <ConversionInput
               keyboardType="numeric"
               testID="conversion_input_1"
+              value={value.toString()}
+              text={baseCurrency}
+              onChangeText={setValue}
+              onButtonPress={() =>
+                navigate("Options", {
+                  screen: 'CurrencyList',
+                  params: {
+                    title: "Base Currency",
+                    isBaseCurrency: true
+                  }
+                })
+              }
             />
-            <ConversionInput editable={false} testID="conversion_input_2" />
-            <ReverseButton text="Reverse Currencies" onPress={() => {}} />
+            <ConversionInput
+              editable={false}
+              testID="conversion_input_2"
+              text={quoteCurrency}
+              value={
+                value &&
+                `${(parseFloat(value) * conversionRate?.rate).toFixed(2)}`
+              }
+              onButtonPress={() =>
+                navigate("Options", {
+                  screen: 'CurrencyList',
+                  params: {
+                    title: "Quote Currency",
+                    isBaseCurrency: false
+                  }
+                })
+              }
+            />
+            <ReverseButton text="Reverse Currencies" onPress={swapCurrency} />
           </View>
           <KeyboardSpacer onToggle={(visible) => setScrollEnabled(visible)} />
         </View>
@@ -69,11 +114,9 @@ export const Home = ({getRates}) => {
 }
 
 // Home Proptypes
-Home.propTypes = {
-  getRates: PropTypes.func.isRequired,
-}
+Home.propTypes = {}
 
 // Home Default props
 Home.defaultProps = {}
 
-export default flow([connect])(Home)
+export default Home

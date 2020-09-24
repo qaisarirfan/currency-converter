@@ -1,15 +1,7 @@
 import {connect} from "react-redux"
 
-import {selectStyleableTheme} from "../../redux/reducers/themes/selectors"
+const mapStateToProps = (state) => ({})
 
-import {createLoadAction} from "../../redux/reducers/conversion/actionCreators"
-
-const mapStateToProps = (state) => ({
-  styleableTheme: selectStyleableTheme(state),
-})
-
-const mapDispatchToProps = {
-  getRates: createLoadAction,
-}
+const mapDispatchToProps = {}
 
 export default connect(mapStateToProps, mapDispatchToProps)

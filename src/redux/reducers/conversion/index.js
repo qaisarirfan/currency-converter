@@ -1,9 +1,16 @@
-import { createReducer } from "../../utility"
-import { RATES } from "./actions"
-import { ERROR, LOADED, LOADING } from "../../middleware/actions"
+import {createReducer} from "../../utility"
+import {
+  CHANGE_BASE_CURRENCY,
+  CHANGE_QUOTE_CURRENCY,
+  RATES,
+  SWAP_CURRENCY,
+} from "./actions"
+import {ERROR, LOADED, LOADING} from "../../middleware/actions"
 
 // conversion initial state
 export const initialState = {
+  baseCurrency: "USD",
+  quoteCurrency: "GBP",
   rates: {
     data: null,
     loader: false,
@@ -30,7 +37,7 @@ const reducers = {
       ...state,
       rates: {
         ...state.rates,
-        data: payload?.result,
+        data: payload.result,
         loader: false,
       },
     }
@@ -43,8 +50,30 @@ const reducers = {
         ...state.rates,
         data: null,
         loader: false,
-        loadingError: payload?.result,
+        loadingError: payload.result,
       },
+    }
+  },
+
+  [SWAP_CURRENCY](state) {
+    return {
+      ...state,
+      baseCurrency: state.quoteCurrency,
+      quoteCurrency: state.baseCurrency,
+    }
+  },
+
+  [CHANGE_BASE_CURRENCY](state, payload) {
+    return {
+      ...state,
+      baseCurrency: payload,
+    }
+  },
+
+  [CHANGE_QUOTE_CURRENCY](state, payload) {
+    return {
+      ...state,
+      quoteCurrency: payload,
     }
   },
 }
