@@ -8,6 +8,7 @@ import {PersistGate} from "redux-persist/integration/react"
 import configureStore from "./src/redux/configureStore"
 import App from "./src/App"
 import ThemeContextProvider from "./src/ContextUtils/ThemeContext"
+import ConversionContextProvider from "./src/ContextUtils/ConversionContext"
 import {name as appName} from "./app.json"
 
 const initialState = {}
@@ -18,7 +19,9 @@ const Main = () => (
   <Provider store={store}>
     <PersistGate loading={<Text>loading...</Text>} persistor={persistor}>
       <ThemeContextProvider>
-        <App />
+        <ConversionContextProvider>
+          <App />
+        </ConversionContextProvider>
       </ThemeContextProvider>
     </PersistGate>
   </Provider>
