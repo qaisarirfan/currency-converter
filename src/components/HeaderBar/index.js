@@ -14,18 +14,25 @@ export const HeaderBar = ({title, isHeaderShow, rightContent}) => {
   const styles = themeStyles(styleableTheme)
   const {canGoBack, goBack} = useNavigation()
 
-  let backgroundColor = null
+  let style = {}
   if (isHeaderShow) {
-    backgroundColor = styleableTheme[800]
+    style = {
+      backgroundColor: styleableTheme[800],
+    }
+  } else {
+    style = {
+      paddingBottom: 0,
+      paddingTop: 0,
+    }
   }
 
   return (
-    <View style={[styles.root, {backgroundColor}]}>
+    <View style={[styles.root, {...style}]}>
       <CustomStatusBar
         barStyle="light-content"
         backgroundColor={styleableTheme[800]}
       />
-      <View style={[styles.header, {backgroundColor}]}>
+      <View style={[styles.header, {...style}]}>
         <View style={styles.back}>
           {isHeaderShow && canGoBack() ? (
             <TouchableOpacity onPress={goBack} style={styles.backButton}>
