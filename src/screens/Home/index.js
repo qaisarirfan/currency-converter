@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from "react"
-import {View, TouchableOpacity, Image, Text} from "react-native"
+import {View, TouchableOpacity, Text} from "react-native"
 import Entypo from "react-native-vector-icons/Entypo"
 import PropTypes from "prop-types"
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view"
@@ -13,6 +13,7 @@ import themeStyles from "./styles"
 import HeaderBar from "../../components/HeaderBar"
 import {ThemeContext} from "../../ContextUtils/ThemeContext"
 import {ConversionContext} from "../../ContextUtils/ConversionContext"
+import {Logo} from "../../components/Logo"
 
 // Home Component content
 export const Home = () => {
@@ -64,13 +65,7 @@ export const Home = () => {
         scrollEnabled
         behavior="padding">
         <View style={styles.content}>
-          <View style={styles.logoContainer}>
-            <Image
-              source={require("../../assets/images/logo.png")}
-              style={styles.logo}
-              resizeMode="contain"
-            />
-          </View>
+          <Logo />
           <Text style={styles.textHeader}>Currency Converter</Text>
           <View style={styles.inputContainer}>
             <ConversionInput

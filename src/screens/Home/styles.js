@@ -16,17 +16,6 @@ const styles = (styleableTheme) => {
     content: {
       paddingTop: screen.height * 0.04,
     },
-    logoContainer: {
-      alignItems: "center",
-      justifyContent: "center",
-      marginBottom: 20,
-      height: screen.width * 0.3,
-    },
-    logo: {
-      position: "absolute",
-      width: screen.width * 0.4,
-      height: screen.width * 0.4,
-    },
     textHeader: {
       color: styleableTheme[50],
       fontWeight: "bold",
