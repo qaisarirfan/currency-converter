@@ -3,6 +3,7 @@ import SplashScreen from "react-native-splash-screen"
 import {NavigationContainer} from "@react-navigation/native"
 import {createStackNavigator} from "@react-navigation/stack"
 
+import Login from "../screens/Login"
 import Home from "../screens/Home"
 import Options from "../screens/Options"
 import Themes from "../screens/Themes"
@@ -37,11 +38,20 @@ const App = () => {
   }, [defaultTheme])
 
   const Stack = createStackNavigator()
+
+  const isLoggedin = false
+
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Options" component={OptionsStack} />
+        {!isLoggedin ? (
+          <Stack.Screen name="Login" component={Login} />
+        ) : (
+          <>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Options" component={OptionsStack} />
+          </>
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   )
