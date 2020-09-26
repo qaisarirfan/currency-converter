@@ -1,20 +1,11 @@
 import {connect} from "react-redux"
 
-import {
-  selectDefaultTheme,
-  selectStyleableTheme,
-  selectThemes,
-} from "../../redux/reducers/themes/selectors"
-import {createChangeThemeAction} from "../../redux/reducers/themes/actionCreators"
+import {selectThemes} from "../../redux/reducers/themes/selectors"
 
 const mapStateToProps = (state) => ({
   themes: selectThemes(state),
-  defaultTheme: selectDefaultTheme(state),
-  styleableTheme: selectStyleableTheme(state),
 })
 
-const mapDispatchToProps = {
-  changeTheme: createChangeThemeAction,
-}
+const mapDispatchToProps = {}
 
 export default connect(mapStateToProps, mapDispatchToProps)

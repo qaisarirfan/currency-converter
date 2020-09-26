@@ -13,7 +13,7 @@ import {HeaderBar} from "../../components/HeaderBar"
 import {ConversionContext} from "../../ContextUtils/ConversionContext"
 
 // CurrencyList Component content
-export const CurrencyList = ({currencies}) => {
+export const CurrencyList = () => {
   const {push} = useNavigation()
   const {name, params} = useRoute()
   const {isBaseCurrency, title} = params
@@ -26,12 +26,13 @@ export const CurrencyList = ({currencies}) => {
     quoteCurrency,
     changeBaseCurrency,
     changeQuoteCurrency,
+    rates,
   } = useContext(ConversionContext)
   return (
     <View style={styles.root}>
       <HeaderBar title={title || name} />
       <FlatList
-        data={currencies}
+        data={rates}
         renderItem={({item}) => {
           let selected = false
 
@@ -68,13 +69,9 @@ export const CurrencyList = ({currencies}) => {
 }
 
 // CurrencyList Proptypes
-CurrencyList.propTypes = {
-  currencies: PropTypes.object,
-}
+CurrencyList.propTypes = {}
 
 // CurrencyList Default props
-CurrencyList.defaultProps = {
-  currencies: {},
-}
+CurrencyList.defaultProps = {}
 
 export default flow([connect])(CurrencyList)

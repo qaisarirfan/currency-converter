@@ -1,26 +1,27 @@
-import React, { useContext, useEffect, useState } from "react"
-import { View, TouchableOpacity, Image, Text } from "react-native"
+import React, {useContext, useEffect, useState} from "react"
+import {View, TouchableOpacity, Image, Text} from "react-native"
 import Entypo from "react-native-vector-icons/Entypo"
 import PropTypes from "prop-types"
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
-import { useNavigation } from "@react-navigation/native"
+import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view"
+import {useNavigation} from "@react-navigation/native"
 
-import { KeyboardSpacer } from "../../components/KeyboardSpacer"
-import { ConversionInput } from "../../components/ConversionInput"
-import { ReverseButton } from "../../components/ReverseButton"
+import {get} from "lodash"
+import {KeyboardSpacer} from "../../components/KeyboardSpacer"
+import {ConversionInput} from "../../components/ConversionInput"
+import {ReverseButton} from "../../components/ReverseButton"
 import themeStyles from "./styles"
 import HeaderBar from "../../components/HeaderBar"
-import { ThemeContext } from "../../ContextUtils/ThemeContext"
-import { ConversionContext } from "../../ContextUtils/ConversionContext"
+import {ThemeContext} from "../../ContextUtils/ThemeContext"
+import {ConversionContext} from "../../ContextUtils/ConversionContext"
 
 // Home Component content
 export const Home = () => {
-  const { push, navigate } = useNavigation()
+  const {push, navigate} = useNavigation()
   const [scrollEnabled, setScrollEnabled] = useState(false)
-  const { styleableTheme } = useContext(ThemeContext)
+  const {styleableTheme} = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
 
-  const [value, setValue] = useState("100");
+  const [value, setValue] = useState("100")
 
   const {
     getRates,
@@ -28,15 +29,22 @@ export const Home = () => {
     baseCurrency,
     quoteCurrency,
     swapCurrency,
+    loader,
   } = useContext(ConversionContext)
-
-  const conversionRate = rates.find((rate) => rate.name === quoteCurrency) || {}
-
-  console.log(conversionRate)
 
   useEffect(() => {
     getRates(baseCurrency)
   }, [baseCurrency])
+
+  const conversionRate = rates.find((rate) => rate.name === quoteCurrency) || {}
+
+  const rate = get(conversionRate, "rate", 0)
+  const inputValue = parseFloat(value) || 0
+  let convertedValue = "Converting..."
+
+  if (!loader) {
+    convertedValue = (rate * inputValue).toFixed(2)
+  }
 
   return (
     <View style={styles.root} testID="welcome">
@@ -78,11 +86,11 @@ export const Home = () => {
               onChangeText={setValue}
               onButtonPress={() =>
                 navigate("Options", {
-                  screen: 'CurrencyList',
+                  screen: "CurrencyList",
                   params: {
                     title: "Base Currency",
-                    isBaseCurrency: true
-                  }
+                    isBaseCurrency: true,
+                  },
                 })
               }
             />
@@ -90,17 +98,14 @@ export const Home = () => {
               editable={false}
               testID="conversion_input_2"
               text={quoteCurrency}
-              value={
-                value &&
-                `${(parseFloat(value) * conversionRate?.rate).toFixed(2)}`
-              }
+              value={convertedValue}
               onButtonPress={() =>
                 navigate("Options", {
-                  screen: 'CurrencyList',
+                  screen: "CurrencyList",
                   params: {
                     title: "Quote Currency",
-                    isBaseCurrency: false
-                  }
+                    isBaseCurrency: false,
+                  },
                 })
               }
             />

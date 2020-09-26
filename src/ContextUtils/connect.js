@@ -9,6 +9,7 @@ import {
   selectBaseCurrency,
   selectQuoteCurrency,
   selectRatesData,
+  selectRatesLoader,
 } from "../redux/reducers/conversion/selectors"
 
 import {createChangeThemeAction} from "../redux/reducers/themes/actionCreators"
@@ -27,6 +28,7 @@ const mapStateToProps = (state) => ({
   baseCurrency: selectBaseCurrency(state),
   quoteCurrency: selectQuoteCurrency(state),
   rates: selectRatesData(state),
+  loader: selectRatesLoader(state),
 })
 
 const mapDispatchToProps = {
