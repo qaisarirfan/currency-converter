@@ -8,7 +8,7 @@ export const initialState = {
   themes: {
     ...themeOptions,
   },
-  default: "#2fbe74",
+  default: "#4f6d7a",
 }
 
 // Reducer

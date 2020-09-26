@@ -66,11 +66,6 @@ export const Home = () => {
         <View style={styles.content}>
           <View style={styles.logoContainer}>
             <Image
-              source={require("../../assets/images/background.png")}
-              style={styles.logoBackground}
-              resizeMode="contain"
-            />
-            <Image
               source={require("../../assets/images/logo.png")}
               style={styles.logo}
               resizeMode="contain"

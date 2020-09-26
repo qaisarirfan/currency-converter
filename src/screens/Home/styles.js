@@ -14,21 +14,18 @@ const styles = (styleableTheme) => {
       marginHorizontal: 20,
     },
     content: {
-      paddingTop: screen.height * 0.1,
+      paddingTop: screen.height * 0.04,
     },
     logoContainer: {
       alignItems: "center",
       justifyContent: "center",
       marginBottom: 20,
-    },
-    logoBackground: {
-      width: screen.width / 0.45,
-      height: screen.width * 0.45,
+      height: screen.width * 0.3,
     },
     logo: {
       position: "absolute",
-      width: screen.width * 0.25,
-      height: screen.width * 0.25,
+      width: screen.width * 0.4,
+      height: screen.width * 0.4,
     },
     textHeader: {
       color: styleableTheme[50],
@@ -36,12 +33,6 @@ const styles = (styleableTheme) => {
       fontSize: 30,
       textAlign: "center",
       marginBottom: 20,
-    },
-    input: {
-      padding: 10,
-      fontSize: 16,
-      backgroundColor: "#000",
-      height: 40,
     },
   })
 }

@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native"
-
+import Color from "color"
 // ConversionInput: Styling here
 const styles = (theme) => {
   return StyleSheet.create({
@@ -32,7 +32,7 @@ const styles = (theme) => {
       flex: 1,
       padding: 10,
       fontSize: 16,
-      color: theme.A700,
+      color: Color(theme.A700).darken(0.6).hex(),
     },
   })
 }
