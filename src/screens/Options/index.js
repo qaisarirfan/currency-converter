@@ -1,15 +1,17 @@
 import React, {useContext} from "react"
 import {SafeAreaView, ScrollView, View} from "react-native"
 import PropTypes from "prop-types"
+import flow from "lodash/flow"
 import Entypo from "react-native-vector-icons/Entypo"
 import {useNavigation, useRoute} from "@react-navigation/native"
 import {RowItem} from "../../components/RowItem"
 import {HeaderBar} from "../../components/HeaderBar"
 import {ThemeContext} from "../../ContextUtils/ThemeContext"
 import themeStyles from "./styles"
+import connect from "./connect"
 
 // Options Component content
-export const Options = () => {
+export const Options = ({logout}) => {
   const {push} = useNavigation()
   const {name} = useRoute()
   const {styleableTheme} = useContext(ThemeContext)
@@ -32,14 +34,10 @@ export const Options = () => {
             }
           />
           <RowItem
-            title="Currency List"
-            onPress={() => push("CurrencyList")}
+            title="Logout"
+            onPress={logout}
             rightIcon={
-              <Entypo
-                name="chevron-right"
-                size={20}
-                color={styleableTheme[50]}
-              />
+              <Entypo name="log-out" size={20} color={styleableTheme[50]} />
             }
           />
         </ScrollView>
@@ -49,9 +47,11 @@ export const Options = () => {
 }
 
 // Options Proptypes
-Options.propTypes = {}
+Options.propTypes = {
+  logout: PropTypes.func.isRequired,
+}
 
 // Options Default props
 Options.defaultProps = {}
 
-export default Options
+export default flow([connect])(Options)

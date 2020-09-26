@@ -15,6 +15,9 @@ const styles = (theme) => {
       flex: 1,
       justifyContent: "center",
     },
+    inputContainer: {
+      marginHorizontal: 20,
+    },
     input: {
       padding: 14,
       paddingLeft: 10,
@@ -23,7 +26,6 @@ const styles = (theme) => {
       color: Color(theme.A700).darken(0.6).hex(),
       backgroundColor: "#FFF",
       marginVertical: 10,
-      marginHorizontal: 20,
       flexDirection: "row",
       borderRadius: 5,
       borderWidth: StyleSheet.hairlineWidth,

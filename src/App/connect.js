@@ -1,14 +1,11 @@
 import {connect} from "react-redux"
 
-import {selectDefaultTheme} from "../redux/reducers/themes/selectors"
-import {createChangeThemeAction} from "../redux/reducers/themes/actionCreators"
+import {selectIsLoggedin} from "../redux/reducers/authentication/selectors"
 
 const mapStateToProps = (state) => ({
-  defaultTheme: selectDefaultTheme(state),
+  isLoggedin: selectIsLoggedin(state),
 })
 
-const mapDispatchToProps = {
-  changeTheme: createChangeThemeAction,
-}
+const mapDispatchToProps = {}
 
 export default connect(mapStateToProps, mapDispatchToProps)

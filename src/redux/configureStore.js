@@ -24,14 +24,8 @@ import {reducerName as themesReducerName} from "./reducers/themes/actions"
 import conversionReducer from "./reducers/conversion"
 import {reducerName as conversionReducerName} from "./reducers/conversion/actions"
 
-export const saveAuthFilter = createFilter(authReducerName, [
-  "login.data",
-  "redirectUrl",
-])
-
-export const loadAuthFilter = createFilter(authReducerName, null, [
-  "login.data",
-])
+export const saveAuthFilter = createFilter(authReducerName, ["login"])
+export const loadAuthFilter = createFilter(authReducerName, null, ["login"])
 
 export const saveThemesFilter = createFilter(themesReducerName, ["default"])
 export const loadThemesFilter = createFilter(themesReducerName, null, [

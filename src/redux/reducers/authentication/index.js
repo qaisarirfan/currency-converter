@@ -1,20 +1,26 @@
 import {createReducer} from "../../utility"
 import {ERROR, LOADED, LOADING} from "../../middleware/actions"
-import {SET_REDIRECT, LOGIN, LOGOUT} from "./actions"
+import {LOGIN, LOGOUT} from "./actions"
 
 const initialState = {
   login: {
     data: null,
+    isLoggedin: false,
     error: null,
     loader: false,
   },
-  redirectUrl: "/",
 }
 
 // Reducer
 const reducers = {
-  [SET_REDIRECT](state, payload) {
-    return {...state, redirectUrl: payload}
+  [LOGIN](state) {
+    return {
+      ...state,
+      login: {
+        ...state.login,
+        isLoggedin: true,
+      },
+    }
   },
 
   [LOGIN + LOADING](state) {
@@ -50,6 +56,10 @@ const reducers = {
         error: payload,
       },
     }
+  },
+
+  [LOGOUT]() {
+    return initialState
   },
 
   [LOGOUT + LOADED]() {

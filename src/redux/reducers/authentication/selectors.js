@@ -9,5 +9,5 @@ export const selectAuthToken = (state) =>
   get(state, `${reducerName}.login.data.access_token`)
 export const selectLoginError = (state) =>
   get(state, `${reducerName}.login.error`)
-export const selectRedirectUrl = (state) =>
-  get(state, `${reducerName}.redirectUrl`)
+export const selectIsLoggedin = (state) =>
+  get(state, `${reducerName}.login.isLoggedin`)

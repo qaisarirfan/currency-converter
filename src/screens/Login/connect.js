@@ -1,10 +1,10 @@
 import {connect} from "react-redux"
-import {logout} from "../../redux/reducers/authentication/actionCreators"
+import {login} from "../../redux/reducers/authentication/actionCreators"
 
 const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {
-  logout,
+  login,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)

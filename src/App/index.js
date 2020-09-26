@@ -2,6 +2,8 @@ import React, {useContext, useEffect} from "react"
 import SplashScreen from "react-native-splash-screen"
 import {NavigationContainer} from "@react-navigation/native"
 import {createStackNavigator} from "@react-navigation/stack"
+import flow from "lodash/flow"
+import PropTypes from "prop-types"
 
 import Login from "../screens/Login"
 import Home from "../screens/Home"
@@ -9,6 +11,7 @@ import Options from "../screens/Options"
 import Themes from "../screens/Themes"
 import CurrencyList from "../screens/CurrencyList"
 import {ThemeContext} from "../ContextUtils/ThemeContext"
+import connect from "./connect"
 
 const OptionsStack = () => {
   const Stack = createStackNavigator()
@@ -27,7 +30,7 @@ const OptionsStack = () => {
   )
 }
 
-const App = () => {
+const App = ({isLoggedin}) => {
   const {defaultTheme, changeTheme} = useContext(ThemeContext)
 
   useEffect(() => {
@@ -38,8 +41,6 @@ const App = () => {
   }, [defaultTheme])
 
   const Stack = createStackNavigator()
-
-  const isLoggedin = false
 
   return (
     <NavigationContainer>
@@ -57,4 +58,14 @@ const App = () => {
   )
 }
 
-export default App
+// App Proptypes
+App.propTypes = {
+  isLoggedin: PropTypes.bool,
+}
+
+// App Default props
+App.defaultProps = {
+  isLoggedin: false,
+}
+
+export default flow([connect])(App)
