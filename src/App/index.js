@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from "react"
-import SplashScreen from "react-native-splash-screen"
+import RNBootSplash from "react-native-bootsplash"
 import {NavigationContainer} from "@react-navigation/native"
 import {createStackNavigator} from "@react-navigation/stack"
 import flow from "lodash/flow"
@@ -34,7 +34,7 @@ const App = ({isLoggedin}) => {
   const {defaultTheme, changeTheme} = useContext(ThemeContext)
 
   useEffect(() => {
-    SplashScreen.hide()
+    RNBootSplash.hide({duration: 250})
     if (defaultTheme) {
       changeTheme(defaultTheme)
     }
