@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from "react"
-
+import SplashScreen from "react-native-splash-screen"
 import {NavigationContainer} from "@react-navigation/native"
 import {createStackNavigator} from "@react-navigation/stack"
 
@@ -30,6 +30,7 @@ const App = () => {
   const {defaultTheme, changeTheme} = useContext(ThemeContext)
 
   useEffect(() => {
+    SplashScreen.hide()
     if (defaultTheme) {
       changeTheme(defaultTheme)
     }
