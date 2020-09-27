@@ -1,10 +1,13 @@
 import React, {useContext} from "react"
 import flow from "lodash/flow"
 import get from "lodash/get"
-import {View, FlatList} from "react-native"
+import filter from "lodash/filter"
+import {View, FlatList, TouchableOpacity} from "react-native"
 import PropTypes from "prop-types"
 import {useNavigation, useRoute} from "@react-navigation/native"
 import Entypo from "react-native-vector-icons/Entypo"
+import CheckBox from "@react-native-community/checkbox"
+import cc from "currency-codes"
 
 import themeStyles from "./styles"
 import {RowItem, RowSeparator} from "../../components/RowItem"
@@ -30,12 +33,18 @@ export const CurrencyList = () => {
     changeBaseCurrency,
     changeQuoteCurrency,
     rates,
+    toggleFavorite,
   } = useContext(ConversionContext)
+
+  const exclude = isBaseCurrency ? quoteCurrency : baseCurrency
+
   return (
     <View style={styles.root}>
       <HeaderBar title={title || name} />
       <FlatList
-        data={rates}
+        data={filter(rates, (rate) => {
+          return exclude !== rate.name
+        })}
         renderItem={({item}) => {
           let selected = false
 
@@ -44,21 +53,43 @@ export const CurrencyList = () => {
           } else if (!isBaseCurrency && item.name === quoteCurrency) {
             selected = true
           }
+          const {currency} = cc.code(item.name)
           return (
             <RowItem
-              title={item.name}
-              onPress={() => {
-                if (isBaseCurrency) {
-                  changeBaseCurrency(item.name)
-                } else {
-                  changeQuoteCurrency(item.name)
-                }
-                push("Home")
-              }}
+              title={`${item.name} (${currency})`}
+              isButton={false}
               rightIcon={
-                selected && (
-                  <Entypo name="check" size={20} color={styleableTheme[50]} />
-                )
+                <View
+                  style={{
+                    flexDirection: "row",
+                  }}>
+                  <TouchableOpacity
+                    style={{
+                      paddingRight: 12,
+                    }}
+                    onPress={() => toggleFavorite(item.name)}>
+                    <Entypo
+                      name={item.isFavorite ? "star" : "star-outlined"}
+                      size={30}
+                      color={item.isFavorite ? "#FFDE00" : styleableTheme[500]}
+                    />
+                  </TouchableOpacity>
+                  <CheckBox
+                    value={selected}
+                    tintColor={styleableTheme[900]}
+                    onCheckColor={styleableTheme[50]}
+                    onFillColor={styleableTheme[700]}
+                    onTintColor={styleableTheme[900]}
+                    onValueChange={() => {
+                      if (isBaseCurrency) {
+                        changeBaseCurrency(item.name)
+                      } else {
+                        changeQuoteCurrency(item.name)
+                      }
+                      push("Home")
+                    }}
+                  />
+                </View>
               }
             />
           )

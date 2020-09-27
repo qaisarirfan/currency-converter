@@ -15,6 +15,7 @@ export const ConversionContextProvider = ({
   changeBaseCurrency,
   changeQuoteCurrency,
   loader,
+  toggleFavorite,
 }) => {
   const contextValue = {
     baseCurrency,
@@ -25,6 +26,7 @@ export const ConversionContextProvider = ({
     changeBaseCurrency,
     changeQuoteCurrency,
     loader,
+    toggleFavorite,
   }
   return (
     <ConversionContext.Provider value={contextValue}>

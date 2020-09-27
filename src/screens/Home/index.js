@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from "react"
-import {View, TouchableOpacity, Text} from "react-native"
+import {View, TouchableOpacity, Text, ActivityIndicator} from "react-native"
 import Entypo from "react-native-vector-icons/Entypo"
 import PropTypes from "prop-types"
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view"
@@ -100,6 +100,7 @@ export const Home = () => {
               }
             />
             <ReverseButton text="Reverse Currencies" onPress={swapCurrency} />
+            {loader ? <ActivityIndicator color="#fff" /> : null}
           </View>
           <KeyboardSpacer onToggle={(visible) => setScrollEnabled(visible)} />
         </View>

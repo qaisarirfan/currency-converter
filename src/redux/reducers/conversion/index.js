@@ -1,22 +1,26 @@
 import get from "lodash/get"
+import findIndex from "lodash/findIndex"
 import {createReducer} from "../../utility"
 import {
   CHANGE_BASE_CURRENCY,
   CHANGE_QUOTE_CURRENCY,
   RATES,
   SWAP_CURRENCY,
+  TOGGLE_FAVORITE,
 } from "./actions"
 import {ERROR, LOADED, LOADING} from "../../middleware/actions"
+import {LOGOUT} from "../authentication/actions"
 
 // conversion initial state
 export const initialState = {
   baseCurrency: "USD",
   quoteCurrency: "GBP",
   rates: {
-    data: null,
+    data: [],
     loader: false,
     loadingError: null,
   },
+  favorite: [],
 }
 
 // conversion Reducer
@@ -26,7 +30,7 @@ const reducers = {
       ...state,
       rates: {
         ...state.rates,
-        data: null,
+        data: [],
         loadingError: null,
         loader: true,
       },
@@ -34,12 +38,17 @@ const reducers = {
   },
 
   [RATES + LOADED](state, payload) {
-    const result = get(payload, "result", undefined)
+    const result = get(payload, "result.rates", {})
     return {
       ...state,
       rates: {
         ...state.rates,
-        data: result,
+        data: Object.keys(result).map((key) => ({
+          name: key,
+          rate: result[key],
+          isSelected: false,
+          isFavorite: false,
+        })),
         loader: false,
       },
     }
@@ -78,6 +87,29 @@ const reducers = {
       ...state,
       quoteCurrency: payload,
     }
+  },
+
+  [TOGGLE_FAVORITE](state, payload) {
+    const favorite = [...state.favorite]
+
+    const index = findIndex(state.favorite, (fav) => {
+      return fav === payload
+    })
+
+    if (index === -1) {
+      favorite.push(payload)
+    } else {
+      favorite.splice(index, 1)
+    }
+
+    return {
+      ...state,
+      favorite,
+    }
+  },
+
+  [LOGOUT]() {
+    return initialState
   },
 }
 

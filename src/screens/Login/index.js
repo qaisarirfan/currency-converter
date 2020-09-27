@@ -1,5 +1,12 @@
-import React, {useContext} from "react"
-import {View, Text, TextInput, TouchableOpacity, Alert} from "react-native"
+import React, {useContext, useState} from "react"
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Alert,
+  ActivityIndicator,
+} from "react-native"
 import flow from "lodash/flow"
 import isEqual from "lodash/isEqual"
 import PropTypes from "prop-types"
@@ -19,6 +26,8 @@ export const Login = ({login}) => {
   const {styleableTheme} = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
   const {name} = useRoute()
+
+  const [loader, setLoader] = useState(false)
 
   const sleep = (duration) =>
     new Promise((resolve) => setTimeout(() => resolve(), duration))
@@ -45,7 +54,11 @@ export const Login = ({login}) => {
                 password: "admin",
               }
               if (isEqual(values, loginFakeData)) {
-                sleep(5000).then(login)
+                setLoader(true)
+                sleep(5000).then(() => {
+                  login()
+                  setLoader(false)
+                })
               } else {
                 Alert.alert(
                   "Error",
@@ -107,6 +120,7 @@ export const Login = ({login}) => {
                   testID="submit">
                   <Text style={styles.submitButtonText}>Submit</Text>
                 </TouchableOpacity>
+                {loader ? <ActivityIndicator color="#fff" /> : null}
               </View>
             )}
           </Formik>

@@ -3,6 +3,7 @@ import {
   CHANGE_QUOTE_CURRENCY,
   RATES,
   SWAP_CURRENCY,
+  TOGGLE_FAVORITE,
 } from "./actions"
 
 // conversion actions
@@ -25,5 +26,10 @@ export const changeBaseCurrency = (currency) => ({
 
 export const changeQuoteCurrency = (currency) => ({
   type: CHANGE_QUOTE_CURRENCY,
+  payload: currency,
+})
+
+export const toggleFavorite = (currency) => ({
+  type: TOGGLE_FAVORITE,
   payload: currency,
 })

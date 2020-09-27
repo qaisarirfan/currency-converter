@@ -5,15 +5,24 @@ import themeStyles from "./styles"
 import {ThemeContext} from "../../ContextUtils/ThemeContext"
 
 // RowItem Component content
-export const RowItem = ({title, onPress, rightIcon, ...rest}) => {
+export const RowItem = ({title, isButton, onPress, rightIcon, ...rest}) => {
   const {styleableTheme} = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
-  return (
-    <TouchableOpacity onPress={onPress} style={styles.row} {...rest}>
+  let component = (
+    <View style={styles.row}>
       <Text style={styles.title}>{title}</Text>
       {rightIcon}
-    </TouchableOpacity>
+    </View>
   )
+  if (isButton) {
+    component = (
+      <TouchableOpacity onPress={onPress} style={styles.row} {...rest}>
+        <Text style={styles.title}>{title}</Text>
+        {rightIcon}
+      </TouchableOpacity>
+    )
+  }
+  return component
 }
 
 // RowItem Proptypes
@@ -21,12 +30,14 @@ RowItem.propTypes = {
   title: PropTypes.string.isRequired,
   onPress: PropTypes.func,
   rightIcon: PropTypes.node,
+  isButton: PropTypes.bool,
 }
 
 // RowItem Default props
 RowItem.defaultProps = {
   onPress: () => {},
   rightIcon: null,
+  isButton: true,
 }
 
 export const RowSeparator = () => {

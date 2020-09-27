@@ -32,15 +32,29 @@ export const loadThemesFilter = createFilter(themesReducerName, null, [
   "default",
 ])
 
+export const saveRatesFavFilter = createFilter(conversionReducerName, [
+  "favorite",
+])
+export const loadRatesFavFilter = createFilter(conversionReducerName, null, [
+  "favorite",
+])
+
 const storageConfig = {
   key: "root",
   storage: AsyncStorage,
-  whitelist: [authReducerName, firstLoadReducerName, themesReducerName],
+  whitelist: [
+    authReducerName,
+    firstLoadReducerName,
+    themesReducerName,
+    conversionReducerName,
+  ],
   transforms: [
     saveAuthFilter,
     loadAuthFilter,
     saveThemesFilter,
     loadThemesFilter,
+    saveRatesFavFilter,
+    loadRatesFavFilter,
   ],
 }
 
