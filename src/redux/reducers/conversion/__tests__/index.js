@@ -42,7 +42,7 @@ describe("conversion reducer", () => {
       rates:{
         ...initialState.rates,
         loader:false,
-        data:undefined
+        data:[]
       }
     })
     result.toMatchSnapshot()

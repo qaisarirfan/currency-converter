@@ -3,9 +3,10 @@
 exports[`conversion reducer should handle GET_REQUEST_FAIL 1`] = `
 Object {
   "baseCurrency": "USD",
+  "favorite": Array [],
   "quoteCurrency": "GBP",
   "rates": Object {
-    "data": null,
+    "data": Array [],
     "loader": false,
     "loadingError": undefined,
   },
@@ -15,9 +16,10 @@ Object {
 exports[`conversion reducer should handle GET_REQUEST_START 1`] = `
 Object {
   "baseCurrency": "USD",
+  "favorite": Array [],
   "quoteCurrency": "GBP",
   "rates": Object {
-    "data": null,
+    "data": Array [],
     "loader": true,
     "loadingError": null,
   },
@@ -27,9 +29,10 @@ Object {
 exports[`conversion reducer should handle GET_REQUEST_SUCCESS 1`] = `
 Object {
   "baseCurrency": "USD",
+  "favorite": Array [],
   "quoteCurrency": "GBP",
   "rates": Object {
-    "data": undefined,
+    "data": Array [],
     "loader": false,
     "loadingError": null,
   },
@@ -39,9 +42,10 @@ Object {
 exports[`conversion reducer should return the initial state 1`] = `
 Object {
   "baseCurrency": "USD",
+  "favorite": Array [],
   "quoteCurrency": "GBP",
   "rates": Object {
-    "data": null,
+    "data": Array [],
     "loader": false,
     "loadingError": null,
   },

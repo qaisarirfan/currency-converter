@@ -37,7 +37,8 @@ export const Home = () => {
     getRates(baseCurrency)
   }, [baseCurrency])
 
-  const conversionRate = rates.find((rate) => rate.name === quoteCurrency) || {}
+  const conversionRate =
+    (rates && rates.find((rate) => rate.name === quoteCurrency)) || {}
 
   const rate = get(conversionRate, "rate", 0)
   const inputValue = parseFloat(value) || 0

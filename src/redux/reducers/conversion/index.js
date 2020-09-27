@@ -60,7 +60,7 @@ const reducers = {
       ...state,
       rates: {
         ...state.rates,
-        data: null,
+        data: [],
         loader: false,
         loadingError: result,
       },
