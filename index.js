@@ -28,3 +28,5 @@ const Main = () => (
 )
 
 AppRegistry.registerComponent(appName, () => Main)
+
+// export {default} from "./storybook"
