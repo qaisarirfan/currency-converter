@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 40,
-    height: screen.width * 0.3,
   },
   logo: {
     width: screen.width * 0.4,

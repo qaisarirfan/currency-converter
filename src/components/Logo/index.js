@@ -1,15 +1,20 @@
 import React from "react"
-import {View, Text, Image} from "react-native"
+import {Image} from "react-native"
 import PropTypes from "prop-types"
+import styled from "styled-components/native"
 import styles from "./styles"
 
 import logo from "../../assets/images/logo.png"
 
+const StyledView = styled.View`
+  ${{...styles.logoContainer}}
+` // override style if you want
+
 // Logo Component content
 export const Logo = () => (
-  <View style={styles.logoContainer}>
+  <StyledView>
     <Image source={logo} style={styles.logo} resizeMode="contain" />
-  </View>
+  </StyledView>
 )
 
 // Logo Proptypes
