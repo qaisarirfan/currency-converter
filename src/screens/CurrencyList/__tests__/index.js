@@ -1,15 +1,17 @@
 import React from "react"
-import renderer from "react-test-renderer"
+import {render, cleanup, store} from '../../../../jest/testUtils';
 import CurrencyList from ".."
 
-const createProps = () => ({
-  classes: {},
-})
+afterEach(() => {
+  cleanup();
+  store.clearActions();
+});
 
 describe("<CurrencyList />", () => {
+  const createProps = () => ({})
   it("Does not explode", () => {
     const props = createProps()
-    const component = renderer.create(<CurrencyList {...props} />).toJSON()
+    const component = render(<CurrencyList {...props} />).toJSON()
     expect(component).toMatchSnapshot()
   })
 })

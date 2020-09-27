@@ -1,9 +1,185 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<CurrencyList /> Does not explode 1`] = `
-<View>
-  <Text>
-    CurrencyList
-  </Text>
+<View
+  style={
+    Object {
+      "backgroundColor": "#4f6d7a",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {},
+        Object {
+          "backgroundColor": "#36505d",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "height": 20,
+          },
+          Object {
+            "backgroundColor": "#36505d",
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "justifyContent": "space-between",
+            "paddingBottom": 12,
+            "paddingTop": 12,
+          },
+          Object {
+            "backgroundColor": "#36505d",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "justifyContent": "center",
+            "paddingLeft": 6,
+            "width": 250,
+          }
+        }
+      >
+        <RNGestureHandlerButton
+          collapsable={false}
+          onGestureEvent={[Function]}
+          onGestureHandlerEvent={[Function]}
+          onGestureHandlerStateChange={[Function]}
+          onHandlerStateChange={[Function]}
+          rippleColor={0}
+          testID="back"
+        >
+          <View
+            accessible={true}
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "row",
+                "opacity": 1,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": "#eaedef",
+                    "fontSize": 16,
+                  },
+                  undefined,
+                  Object {
+                    "fontFamily": "Entypo",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "#eaedef",
+                  "fontSize": 18,
+                  "lineHeight": 18,
+                }
+              }
+            >
+              Back
+            </Text>
+          </View>
+        </RNGestureHandlerButton>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#36505d",
+            "justifyContent": "center",
+            "width": 250,
+          }
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            Object {
+              "color": "#eaedef",
+              "fontSize": 18,
+              "lineHeight": 18,
+            }
+          }
+        >
+          mockConstructor
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "justifyContent": "center",
+            "paddingRight": 6,
+            "width": 250,
+          }
+        }
+      />
+    </View>
+  </View>
+  <RCTScrollView
+    ItemSeparatorComponent={[Function]}
+    ListFooterComponent={[Function]}
+    data={Array []}
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+      >
+        <View />
+      </View>
+    </View>
+  </RCTScrollView>
 </View>
 `;

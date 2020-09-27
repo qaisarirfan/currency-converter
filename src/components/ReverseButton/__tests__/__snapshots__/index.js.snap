@@ -20,6 +20,7 @@ exports[`<ReverseButton /> Does not explode 1`] = `
       "opacity": 1,
     }
   }
+  testID="reverse_button"
 >
   <Image
     resizeMode="contain"

@@ -1,3 +1,4 @@
+import get from "lodash/get"
 import {createReducer} from "../../utility"
 import {
   CHANGE_BASE_CURRENCY,
@@ -33,24 +34,26 @@ const reducers = {
   },
 
   [RATES + LOADED](state, payload) {
+    const result = get(payload, "result", undefined)
     return {
       ...state,
       rates: {
         ...state.rates,
-        data: payload.result,
+        data: result,
         loader: false,
       },
     }
   },
 
   [RATES + ERROR](state, payload) {
+    const result = get(payload, "result", undefined)
     return {
       ...state,
       rates: {
         ...state.rates,
         data: null,
         loader: false,
-        loadingError: payload.result,
+        loadingError: result,
       },
     }
   },

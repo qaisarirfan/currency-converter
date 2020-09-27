@@ -1,70 +1,267 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Options /> Does not explode 1`] = `
-<RCTSafeAreaView
-  emulateUnlessSupported={true}
+<View
   style={
     Object {
-      "backgroundColor": "#e6f7ee",
+      "backgroundColor": "#4f6d7a",
       "flex": 1,
     }
   }
 >
-  <RCTScrollView>
-    <View>
+  <View
+    style={
+      Array [
+        Object {},
+        Object {
+          "backgroundColor": "#36505d",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "height": 20,
+          },
+          Object {
+            "backgroundColor": "#36505d",
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "justifyContent": "space-between",
+            "paddingBottom": 12,
+            "paddingTop": 12,
+          },
+          Object {
+            "backgroundColor": "#36505d",
+          },
+        ]
+      }
+    >
       <View
-        accessible={true}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "justifyContent": "center",
+            "paddingLeft": 6,
+            "width": 250,
+          }
+        }
+      >
+        <RNGestureHandlerButton
+          collapsable={false}
+          onGestureEvent={[Function]}
+          onGestureHandlerEvent={[Function]}
+          onGestureHandlerStateChange={[Function]}
+          onHandlerStateChange={[Function]}
+          rippleColor={0}
+          testID="back"
+        >
+          <View
+            accessible={true}
+            style={
+              Object {
+                "display": "flex",
+                "flexDirection": "row",
+                "opacity": 1,
+              }
+            }
+          >
+            <Text
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": "#eaedef",
+                    "fontSize": 16,
+                  },
+                  undefined,
+                  Object {
+                    "fontFamily": "Entypo",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "#eaedef",
+                  "fontSize": 18,
+                  "lineHeight": 18,
+                }
+              }
+            >
+              Back
+            </Text>
+          </View>
+        </RNGestureHandlerButton>
+      </View>
+      <View
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#fff",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "opacity": 1,
-            "paddingHorizontal": 20,
-            "paddingVertical": 16,
+            "backgroundColor": "#36505d",
+            "justifyContent": "center",
+            "width": 250,
           }
         }
       >
         <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
           style={
             Object {
-              "fontSize": 16,
+              "color": "#eaedef",
+              "fontSize": 18,
+              "lineHeight": 18,
             }
           }
         >
-          Themes
-        </Text>
-        <Text
-          allowFontScaling={false}
-          style={
-            Array [
-              Object {
-                "color": undefined,
-                "fontSize": 20,
-              },
-              undefined,
-              Object {
-                "fontFamily": "Entypo",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
-            ]
-          }
-        >
-          
+          mockConstructor
         </Text>
       </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "justifyContent": "center",
+            "paddingRight": 6,
+            "width": 250,
+          }
+        }
+      />
     </View>
-  </RCTScrollView>
-</RCTSafeAreaView>
+  </View>
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
+  >
+    <RCTScrollView>
+      <View>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#8499a2",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "opacity": 1,
+              "paddingHorizontal": 20,
+              "paddingVertical": 16,
+            }
+          }
+          testID="themes"
+        >
+          <Text
+            style={
+              Object {
+                "color": "#eaedef",
+                "fontSize": 16,
+              }
+            }
+          >
+            Themes
+          </Text>
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "#eaedef",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": "Entypo",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#8499a2",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "opacity": 1,
+              "paddingHorizontal": 20,
+              "paddingVertical": 16,
+            }
+          }
+          testID="logout"
+        >
+          <Text
+            style={
+              Object {
+                "color": "#eaedef",
+                "fontSize": 16,
+              }
+            }
+          >
+            Logout
+          </Text>
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "#eaedef",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": "Entypo",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </RCTSafeAreaView>
+</View>
 `;

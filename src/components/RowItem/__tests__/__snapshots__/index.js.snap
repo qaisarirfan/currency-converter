@@ -14,7 +14,7 @@ exports[`<RowItem /> Does not explode 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#fff",
+      "backgroundColor": "#8499a2",
       "flexDirection": "row",
       "justifyContent": "space-between",
       "opacity": 1,
@@ -26,6 +26,7 @@ exports[`<RowItem /> Does not explode 1`] = `
   <Text
     style={
       Object {
+        "color": "#eaedef",
         "fontSize": 16,
       }
     }
@@ -38,14 +39,9 @@ exports[`<RowItem /> Does not explode 1`] = `
 exports[`<RowSeparator /> Does not explode 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "height": 0.5,
-      },
-      Object {
-        "backgroundColor": "#fff",
-      },
-    ]
+    Object {
+      "height": 0.5,
+    }
   }
 />
 `;

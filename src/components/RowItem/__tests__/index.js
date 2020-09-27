@@ -1,6 +1,11 @@
 import React from "react"
-import renderer from "react-test-renderer"
+import {render, cleanup, store} from '../../../../jest/testUtils';
 import {RowItem, RowSeparator} from ".."
+
+afterEach(() => {
+  cleanup();
+  store.clearActions();
+});
 
 describe("<RowItem />", () => {
   const createProps = () => ({
@@ -8,7 +13,7 @@ describe("<RowItem />", () => {
   })
   it("Does not explode", () => {
     const props = createProps()
-    const component = renderer.create(<RowItem {...props} />).toJSON()
+    const component = render(<RowItem {...props} />).toJSON()
     expect(component).toMatchSnapshot()
   })
 
@@ -22,7 +27,7 @@ describe("<RowSeparator />", () => {
   })
   it("Does not explode", () => {
     const props = createProps()
-    const component = renderer.create(<RowSeparator {...props} />).toJSON()
+    const component = render(<RowSeparator {...props} />).toJSON()
     expect(component).toMatchSnapshot()
   })
 })

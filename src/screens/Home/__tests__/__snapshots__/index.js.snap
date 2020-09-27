@@ -4,20 +4,70 @@ exports[`<Home /> Does not explode 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#e6f7ee",
+      "backgroundColor": "#4f6d7a",
       "flex": 1,
     }
   }
+  testID="welcome"
 >
-  <RCTScrollView
-    scrollEnabled={false}
+  <View
+    style={
+      Array [
+        Object {},
+        Object {
+          "paddingBottom": 0,
+          "paddingTop": 0,
+        },
+      ]
+    }
   >
-    <View>
-      <RNCSafeAreaView
+    <View
+      style={
+        Array [
+          Object {
+            "height": 20,
+          },
+          Object {
+            "backgroundColor": "#36505d",
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "justifyContent": "space-between",
+            "paddingBottom": 12,
+            "paddingTop": 12,
+          },
+          Object {
+            "paddingBottom": 0,
+            "paddingTop": 0,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "justifyContent": "center",
+            "paddingLeft": 6,
+            "width": 250,
+          }
+        }
+      />
+      <View
         style={
           Object {
             "alignItems": "flex-end",
-            "marginHorizontal": 20,
+            "justifyContent": "center",
+            "paddingRight": 6,
+            "width": 250,
           }
         }
       >
@@ -36,6 +86,7 @@ exports[`<Home /> Does not explode 1`] = `
               "opacity": 1,
             }
           }
+          testID="options_screen_button"
         >
           <Text
             allowFontScaling={false}
@@ -58,37 +109,284 @@ exports[`<Home /> Does not explode 1`] = `
             
           </Text>
         </View>
-      </RNCSafeAreaView>
-      <View>
-        <TextInput
-          allowFontScaling={true}
-          rejectResponderTermination={true}
-          style={
-            Object {
-              "backgroundColor": "#000",
-              "fontSize": 16,
-              "height": 40,
-              "padding": 10,
-            }
-          }
-          underlineColorAndroid="transparent"
-        />
       </View>
+    </View>
+  </View>
+  <RCTScrollView
+    automaticallyAdjustContentInsets={false}
+    behavior="padding"
+    contentInset={
+      Object {
+        "bottom": 0,
+      }
+    }
+    enableAutomaticScroll={true}
+    enableOnAndroid={false}
+    enableResetScrollToCoords={true}
+    extraHeight={75}
+    extraScrollHeight={0}
+    getScrollResponder={[Function]}
+    handleOnScroll={[Function]}
+    keyboardDismissMode="interactive"
+    keyboardOpeningTime={250}
+    keyboardSpace={0}
+    onScroll={[Function]}
+    resetKeyboardSpace={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={1}
+    scrollForExtraHeightOnAndroid={[Function]}
+    scrollIntoView={[Function]}
+    scrollToEnd={[Function]}
+    scrollToFocusedInput={[Function]}
+    scrollToPosition={[Function]}
+    showsVerticalScrollIndicator={true}
+    testID="home_screen"
+    update={[Function]}
+    viewIsInsideTabBar={false}
+  >
+    <View>
       <View
         style={
-          Array [
-            Object {
-              "bottom": 0,
-              "left": 0,
-              "right": 0,
-            },
-            Object {
-              "height": 0,
-            },
-            Object {},
-          ]
+          Object {
+            "paddingTop": 53.36,
+          }
         }
-      />
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "height": 225,
+              "justifyContent": "center",
+              "marginBottom": 40,
+            }
+          }
+        >
+          <Image
+            resizeMode="contain"
+            source={
+              Object {
+                "process": [Function],
+              }
+            }
+            style={
+              Object {
+                "height": 300,
+                "width": 300,
+              }
+            }
+          />
+        </View>
+        <Text
+          style={
+            Object {
+              "color": "#eaedef",
+              "fontSize": 30,
+              "fontWeight": "bold",
+              "marginBottom": 20,
+              "textAlign": "center",
+            }
+          }
+        >
+          Currency Converter
+        </Text>
+        <View>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFF",
+                  "borderColor": "#a7b6bd",
+                  "borderRadius": 5,
+                  "borderWidth": 0.5,
+                  "flexDirection": "row",
+                  "marginHorizontal": 20,
+                  "marginVertical": 10,
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#FFF",
+                  "borderBottomLeftRadius": 5,
+                  "borderRightColor": "#cad3d7",
+                  "borderRightWidth": 0.5,
+                  "borderTopLeftRadius": 5,
+                  "opacity": 1,
+                  "padding": 15,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#000",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  }
+                }
+              />
+            </View>
+            <TextInput
+              allowFontScaling={true}
+              keyboardType="numeric"
+              onChangeText={[Function]}
+              rejectResponderTermination={true}
+              style={
+                Object {
+                  "color": "#00476E",
+                  "flex": 1,
+                  "fontSize": 16,
+                  "padding": 10,
+                }
+              }
+              testID="conversion_input_1"
+              underlineColorAndroid="transparent"
+              value="100"
+            />
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#FFF",
+                  "borderColor": "#a7b6bd",
+                  "borderRadius": 5,
+                  "borderWidth": 0.5,
+                  "flexDirection": "row",
+                  "marginHorizontal": 20,
+                  "marginVertical": 10,
+                },
+                Object {
+                  "backgroundColor": "#f0f0f0",
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#FFF",
+                  "borderBottomLeftRadius": 5,
+                  "borderRightColor": "#cad3d7",
+                  "borderRightWidth": 0.5,
+                  "borderTopLeftRadius": 5,
+                  "opacity": 1,
+                  "padding": 15,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#000",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  }
+                }
+              />
+            </View>
+            <TextInput
+              allowFontScaling={true}
+              editable={false}
+              rejectResponderTermination={true}
+              style={
+                Object {
+                  "color": "#00476E",
+                  "flex": 1,
+                  "fontSize": 16,
+                  "padding": 10,
+                }
+              }
+              testID="conversion_input_2"
+              underlineColorAndroid="transparent"
+              value="0.00"
+            />
+          </View>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginVertical": 20,
+                "opacity": 1,
+              }
+            }
+            testID="reverse_button"
+          >
+            <Image
+              resizeMode="contain"
+              source={
+                Object {
+                  "process": [Function],
+                }
+              }
+              style={
+                Object {
+                  "height": 20,
+                  "marginRight": 10,
+                  "width": 20,
+                }
+              }
+            />
+            <Text
+              style={
+                Object {
+                  "color": "#fff",
+                  "fontSize": 16,
+                }
+              }
+            >
+              Reverse Currencies
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+              },
+              Object {
+                "height": 0,
+              },
+              Object {},
+            ]
+          }
+        />
+      </View>
     </View>
   </RCTScrollView>
 </View>

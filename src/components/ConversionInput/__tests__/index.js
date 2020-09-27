@@ -1,15 +1,17 @@
 import React from "react"
-import renderer from "react-test-renderer"
+import {render, cleanup, store} from '../../../../jest/testUtils';
 import ConversionInput from ".."
 
-const createProps = () => ({
-  classes: {},
-})
+afterEach(() => {
+  cleanup();
+  store.clearActions();
+});
 
 describe("<ConversionInput />", () => {
+  const createProps = () => ({})
   it("Does not explode", () => {
     const props = createProps()
-    const component = renderer.create(<ConversionInput {...props} />).toJSON()
+    const component = render(<ConversionInput {...props} />).toJSON()
     expect(component).toMatchSnapshot()
   })
 })

@@ -1,15 +1,19 @@
 import React from "react"
-import renderer from "react-test-renderer"
+import {render, cleanup, store} from '../../../../jest/testUtils';
 import HeaderBar from ".."
 
-const createProps = () => ({
-  classes: {},
-})
+afterEach(() => {
+  cleanup();
+  store.clearActions();
+});
 
 describe("<HeaderBar />", () => {
+  const createProps = () => ({
+    title: "test",
+  })
   it("Does not explode", () => {
     const props = createProps()
-    const component = renderer.create(<HeaderBar {...props} />).toJSON()
+    const component = render(<HeaderBar {...props} />).toJSON()
     expect(component).toMatchSnapshot()
   })
 })

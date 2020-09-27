@@ -2,6 +2,8 @@
 
 exports[`conversion reducer should handle GET_REQUEST_FAIL 1`] = `
 Object {
+  "baseCurrency": "USD",
+  "quoteCurrency": "GBP",
   "rates": Object {
     "data": null,
     "loader": false,
@@ -12,6 +14,8 @@ Object {
 
 exports[`conversion reducer should handle GET_REQUEST_START 1`] = `
 Object {
+  "baseCurrency": "USD",
+  "quoteCurrency": "GBP",
   "rates": Object {
     "data": null,
     "loader": true,
@@ -22,6 +26,8 @@ Object {
 
 exports[`conversion reducer should handle GET_REQUEST_SUCCESS 1`] = `
 Object {
+  "baseCurrency": "USD",
+  "quoteCurrency": "GBP",
   "rates": Object {
     "data": undefined,
     "loader": false,
@@ -32,6 +38,8 @@ Object {
 
 exports[`conversion reducer should return the initial state 1`] = `
 Object {
+  "baseCurrency": "USD",
+  "quoteCurrency": "GBP",
   "rates": Object {
     "data": null,
     "loader": false,

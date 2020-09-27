@@ -1,9 +1,254 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Login /> Does not explode 1`] = `
-<View>
-  <Text>
-    Login
-  </Text>
+<View
+  style={
+    Object {
+      "backgroundColor": "#4f6d7a",
+      "flex": 1,
+    }
+  }
+  testID="login_screen"
+>
+  <View
+    style={
+      Array [
+        Object {},
+        Object {
+          "paddingBottom": 0,
+          "paddingTop": 0,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "height": 20,
+          },
+          Object {
+            "backgroundColor": "#36505d",
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "justifyContent": "space-between",
+            "paddingBottom": 12,
+            "paddingTop": 12,
+          },
+          Object {
+            "paddingBottom": 0,
+            "paddingTop": 0,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "justifyContent": "center",
+            "paddingLeft": 6,
+            "width": 250,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "justifyContent": "center",
+            "paddingRight": 6,
+            "width": 250,
+          }
+        }
+      />
+    </View>
+  </View>
+  <RCTScrollView
+    automaticallyAdjustContentInsets={false}
+    behavior="padding"
+    contentContainerStyle={
+      Object {
+        "flex": 1,
+      }
+    }
+    contentInset={
+      Object {
+        "bottom": 0,
+      }
+    }
+    enableAutomaticScroll={true}
+    enableOnAndroid={false}
+    enableResetScrollToCoords={true}
+    extraHeight={75}
+    extraScrollHeight={0}
+    getScrollResponder={[Function]}
+    handleOnScroll={[Function]}
+    keyboardDismissMode="interactive"
+    keyboardOpeningTime={250}
+    keyboardSpace={0}
+    onScroll={[Function]}
+    resetKeyboardSpace={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={1}
+    scrollForExtraHeightOnAndroid={[Function]}
+    scrollIntoView={[Function]}
+    scrollToEnd={[Function]}
+    scrollToFocusedInput={[Function]}
+    scrollToPosition={[Function]}
+    showsVerticalScrollIndicator={true}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+    update={[Function]}
+    viewIsInsideTabBar={false}
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "height": 225,
+              "justifyContent": "center",
+              "marginBottom": 40,
+            }
+          }
+        >
+          <Image
+            resizeMode="contain"
+            source={
+              Object {
+                "process": [Function],
+              }
+            }
+            style={
+              Object {
+                "height": 300,
+                "width": 300,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "marginHorizontal": 20,
+            }
+          }
+        >
+          <TextInput
+            allowFontScaling={true}
+            autoCapitalize="none"
+            autoCompleteType="email"
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            placeholder="Email"
+            placeholderTextColor="#00476E"
+            rejectResponderTermination={true}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "borderColor": "#a7b6bd",
+                "borderRadius": 5,
+                "borderWidth": 0.5,
+                "color": "#00476E",
+                "flexDirection": "row",
+                "fontSize": 18,
+                "marginVertical": 10,
+                "padding": 14,
+                "paddingLeft": 10,
+                "paddingRight": 10,
+              }
+            }
+            testID="email"
+            underlineColorAndroid="transparent"
+            value=""
+          />
+          <TextInput
+            allowFontScaling={true}
+            autoCapitalize="none"
+            onBlur={[Function]}
+            onChangeText={[Function]}
+            placeholder="Password"
+            placeholderTextColor="#00476E"
+            rejectResponderTermination={true}
+            secureTextEntry={true}
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+                "borderColor": "#a7b6bd",
+                "borderRadius": 5,
+                "borderWidth": 0.5,
+                "color": "#00476E",
+                "flexDirection": "row",
+                "fontSize": 18,
+                "marginVertical": 10,
+                "padding": 14,
+                "paddingLeft": 10,
+                "paddingRight": 10,
+              }
+            }
+            testID="password"
+            underlineColorAndroid="transparent"
+            value=""
+          />
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#263e4a",
+                "borderRadius": 20,
+                "height": 40,
+                "margin": 15,
+                "opacity": 1,
+                "overflow": "hidden",
+                "padding": 10,
+              }
+            }
+            testID="submit"
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#eaedef",
+                  "fontSize": 18,
+                }
+              }
+            >
+              Submit
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
 </View>
 `;

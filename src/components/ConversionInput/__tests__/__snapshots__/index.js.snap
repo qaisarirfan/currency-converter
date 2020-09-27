@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ConversionInput /> Does not explode 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFF",
+        "borderColor": "#a7b6bd",
+        "borderRadius": 5,
+        "borderWidth": 0.5,
+        "flexDirection": "row",
+        "marginHorizontal": 20,
+        "marginVertical": 10,
+      },
+    ]
+  }
+>
+  <View
+    accessible={true}
+    focusable={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#FFF",
+        "borderBottomLeftRadius": 5,
+        "borderRightColor": "#cad3d7",
+        "borderRightWidth": 0.5,
+        "borderTopLeftRadius": 5,
+        "opacity": 1,
+        "padding": 15,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#000",
+          "fontSize": 18,
+          "fontWeight": "bold",
+        }
+      }
+    />
+  </View>
+  <TextInput
+    allowFontScaling={true}
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "color": "#00476E",
+        "flex": 1,
+        "fontSize": 16,
+        "padding": 10,
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;

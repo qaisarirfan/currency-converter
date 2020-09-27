@@ -1,5 +1,6 @@
 import React, {useContext} from "react"
 import flow from "lodash/flow"
+import get from "lodash/get"
 import {View, FlatList} from "react-native"
 import PropTypes from "prop-types"
 import {useNavigation, useRoute} from "@react-navigation/native"
@@ -16,7 +17,9 @@ import {ConversionContext} from "../../ContextUtils/ConversionContext"
 export const CurrencyList = () => {
   const {push} = useNavigation()
   const {name, params} = useRoute()
-  const {isBaseCurrency, title} = params
+
+  const isBaseCurrency = get(params, "isBaseCurrency", false)
+  const title = get(params, "title", "")
 
   const {styleableTheme} = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
