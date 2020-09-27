@@ -35,7 +35,10 @@ export const HeaderBar = ({title, isHeaderShow, rightContent}) => {
       <View style={[styles.header, {...style}]}>
         <View style={styles.back}>
           {isHeaderShow && canGoBack() ? (
-            <TouchableOpacity onPress={goBack} style={styles.backButton}>
+            <TouchableOpacity
+              testID="back"
+              onPress={goBack}
+              style={styles.backButton}>
               <Entypo
                 name="chevron-left"
                 size={16}

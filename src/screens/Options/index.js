@@ -35,6 +35,7 @@ export const Options = ({logout}) => {
           />
           <RowItem
             title="Logout"
+            testID="logout"
             onPress={logout}
             rightIcon={
               <Entypo name="log-out" size={20} color={styleableTheme[50]} />

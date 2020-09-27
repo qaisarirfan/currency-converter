@@ -20,8 +20,11 @@ export const Login = ({login}) => {
   const styles = themeStyles(styleableTheme)
   const {name} = useRoute()
 
+  const sleep = (duration) =>
+    new Promise((resolve) => setTimeout(() => resolve(), duration))
+
   return (
-    <View style={styles.root}>
+    <View style={styles.root} testID="login_screen">
       <HeaderBar isHeaderShow={false} title={name} />
       <KeyboardAwareScrollView
         scrollEnabled
@@ -42,11 +45,18 @@ export const Login = ({login}) => {
                 password: "admin",
               }
               if (isEqual(values, loginFakeData)) {
-                login()
+                sleep(5000).then(login)
               } else {
                 Alert.alert(
                   "Error",
-                  "The email address that you've entered doesn't match any account."
+                  "The email address that you've entered doesn't match any account.",
+                  [
+                    {
+                      text: "OK",
+                      onPress: () => console.log("OK Pressed"),
+                      testID: "alert",
+                    },
+                  ]
                 )
               }
             }}>
@@ -70,6 +80,7 @@ export const Login = ({login}) => {
                   value={values.email}
                   onChangeText={handleChange("email")}
                   onBlur={handleBlur("email")}
+                  testID="email"
                 />
                 {touched.email && errors.email ? (
                   <Text>{errors.email}</Text>
@@ -85,13 +96,15 @@ export const Login = ({login}) => {
                   value={values.password}
                   onChangeText={handleChange("password")}
                   onBlur={handleBlur("password")}
+                  testID="password"
                 />
                 {touched.password && errors.password ? (
                   <Text>{errors.password}</Text>
                 ) : null}
                 <TouchableOpacity
                   style={styles.submitButton}
-                  onPress={handleSubmit}>
+                  onPress={handleSubmit}
+                  testID="submit">
                   <Text style={styles.submitButtonText}>Submit</Text>
                 </TouchableOpacity>
               </View>
