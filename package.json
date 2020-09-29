@@ -20,7 +20,7 @@
     "@react-native-community/checkbox": "^0.5.4",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.7.4",
-    "@react-navigation/stack": "^5.9.1",
+    "@react-navigation/stack": "^5.9.2",
     "axios": "^0.20.0",
     "color": "^3.1.2",
     "currency-codes": "^2.1.0",
