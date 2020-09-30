@@ -1,6 +1,6 @@
 const urls = Object.freeze({
-  prod: "http://fixer.handlebarlabs.com",
-  dev: "http://fixer.handlebarlabs.com",
+  prod: "https://api.exchangeratesapi.io",
+  dev: "https://api.exchangeratesapi.io",
 })
 
 const baseUrl = __DEV__ ? urls.dev : urls.prod
