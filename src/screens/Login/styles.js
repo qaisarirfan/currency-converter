@@ -1,5 +1,7 @@
 import Color from "color"
-import {StyleSheet} from "react-native"
+import {Dimensions, StyleSheet} from "react-native"
+
+const screen = Dimensions.get("window")
 
 // Login: Styling here
 const styles = (theme) => {
@@ -8,12 +10,9 @@ const styles = (theme) => {
       flex: 1,
       backgroundColor: theme[500],
     },
-    container: {
-      flex: 1,
-    },
+    container: {},
     content: {
-      flex: 1,
-      justifyContent: "center",
+      paddingTop: screen.height * 0.04,
     },
     inputContainer: {
       marginHorizontal: 20,

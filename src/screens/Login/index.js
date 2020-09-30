@@ -20,6 +20,7 @@ import {ThemeContext} from "../../ContextUtils/ThemeContext"
 import {Logo} from "../../components/Logo"
 import themeStyles from "./styles"
 import connect from "./connect"
+import {KeyboardSpacer} from "../../components/KeyboardSpacer"
 
 // Login Component content
 export const Login = ({login}) => {
@@ -28,6 +29,7 @@ export const Login = ({login}) => {
   const {name} = useRoute()
 
   const [loader, setLoader] = useState(false)
+  const [scrollEnabled, setScrollEnabled] = useState(false)
 
   const sleep = (duration) =>
     new Promise((resolve) => setTimeout(() => resolve(), duration))
@@ -124,6 +126,7 @@ export const Login = ({login}) => {
               </View>
             )}
           </Formik>
+          <KeyboardSpacer onToggle={(visible) => setScrollEnabled(visible)} />
         </View>
       </KeyboardAwareScrollView>
     </View>
