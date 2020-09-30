@@ -1,8 +1,5 @@
 # Currency converter
 
-
-
-
 ## Installation 😄
 
 - Clone/download the project
@@ -102,6 +99,10 @@
 
 - iOS:`detox build -c ios` and`detox test -c ios`
 - Android:`detox build -c android` and`detox test -c android`
+
+| iOS | Android |
+| --- | --- |
+| [Imgur](https://i.imgur.com/ip78nXf.mp4) | [Imgur](https://i.imgur.com/p8fWjnw.mp4) |
 
 ## Storybook 📖
 
