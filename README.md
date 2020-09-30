@@ -10,6 +10,10 @@
 - iOS:`npm run ios`/`yarn run ios`
 - Android:`npm run android`/`yarn run android`
 
+### User login credentials
+ - username `admin@admin.com`
+ - password `admin`
+
 ## styled-components
 
 `styled-components` is integrated 😄
