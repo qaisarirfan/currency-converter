@@ -106,7 +106,7 @@ exports[`<Themes /> Does not explode 1`] = `
                 }
               }
             >
-              Back
+              common.back
             </Text>
           </View>
         </RNGestureHandlerButton>
@@ -132,7 +132,7 @@ exports[`<Themes /> Does not explode 1`] = `
             }
           }
         >
-          mockConstructor
+          themes.title
         </Text>
       </View>
       <View
@@ -183,7 +183,7 @@ exports[`<Themes /> Does not explode 1`] = `
               }
             }
           >
-            Theme 1
+            themes.theme 1
           </Text>
           <View
             style={
@@ -241,7 +241,7 @@ exports[`<Themes /> Does not explode 1`] = `
               }
             }
           >
-            Theme 2
+            themes.theme 2
           </Text>
           <View
             style={
@@ -299,7 +299,7 @@ exports[`<Themes /> Does not explode 1`] = `
               }
             }
           >
-            Theme 3
+            themes.theme 3
           </Text>
           <View
             style={
@@ -357,7 +357,7 @@ exports[`<Themes /> Does not explode 1`] = `
               }
             }
           >
-            Theme 4
+            themes.theme 4
           </Text>
           <View
             style={
@@ -415,7 +415,7 @@ exports[`<Themes /> Does not explode 1`] = `
               }
             }
           >
-            Theme 5
+            themes.theme 5
           </Text>
           <View
             style={

@@ -189,7 +189,7 @@ exports[`<Home /> Does not explode 1`] = `
             }
           }
         >
-          Currency Converter
+          home.currency_converter
         </Text>
         <View>
           <View
@@ -368,7 +368,7 @@ exports[`<Home /> Does not explode 1`] = `
                 }
               }
             >
-              Reverse Currencies
+              home.reverse_currencies
             </Text>
           </View>
         </View>

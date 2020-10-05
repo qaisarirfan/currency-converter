@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 import {useNavigation} from "@react-navigation/native"
 import Entypo from "react-native-vector-icons/Entypo"
 import {TouchableOpacity} from "react-native-gesture-handler"
+import {useTranslation} from "react-i18next"
+
 import themeStyles from "./styles"
 import {CustomStatusBar} from "../CustomStatusBar"
 import {ThemeContext} from "../../ContextUtils/ThemeContext"
@@ -13,7 +15,7 @@ export const HeaderBar = ({title, isHeaderShow, rightContent}) => {
   const {styleableTheme} = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
   const {canGoBack, goBack} = useNavigation()
-
+  const {t} = useTranslation()
   let style = {}
   if (isHeaderShow) {
     style = {
@@ -44,7 +46,7 @@ export const HeaderBar = ({title, isHeaderShow, rightContent}) => {
                 size={16}
                 color={styleableTheme[50]}
               />
-              <Text style={styles.text}>Back</Text>
+              <Text style={styles.text}>{t("common.back")}</Text>
             </TouchableOpacity>
           ) : null}
         </View>

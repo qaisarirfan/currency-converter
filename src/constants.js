@@ -147,6 +147,20 @@ export const constants = Object.freeze({
       A700: "#13acff",
     },
   },
+  allowedLanguages: {
+    en: {
+      code: "en",
+      title: "English",
+      flag: require("./assets/flags/US.png"),
+      rtl: false,
+    },
+    ur: {
+      code: "ur",
+      title: "اردو",
+      flag: require("./assets/flags/PK.png"),
+      rtl: true,
+    },
+  },
 })
 
 export default constants

@@ -3,8 +3,8 @@ import {View, SafeAreaView, ScrollView} from "react-native"
 import PropTypes from "prop-types"
 import flow from "lodash/flow"
 import Entypo from "react-native-vector-icons/Entypo"
-import Color from "color"
-import {useRoute} from "@react-navigation/native"
+import {useTranslation} from "react-i18next"
+
 import themeStyles from "./styles"
 import connect from "./connect"
 import {RowItem, RowSeparator} from "../../components/RowItem"
@@ -13,21 +13,21 @@ import {ThemeContext} from "../../ContextUtils/ThemeContext"
 
 // Themes Component content
 export const Themes = ({themes}) => {
-  const {name} = useRoute()
   const {styleableTheme, changeTheme, defaultTheme} = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
-
+  const {t} = useTranslation()
   const colors = Object.keys(themes) || []
+
   return (
     <View style={styles.root}>
-      <HeaderBar title={name} />
+      <HeaderBar title={t("themes.title")} />
       <SafeAreaView>
         <ScrollView>
           {colors.map((color, index) => (
             <React.Fragment key={`theme-${index + 1}`}>
               <RowItem
                 testID={`theme-${index + 1}`}
-                title={`Theme ${index + 1}`}
+                title={`${t("themes.theme")} ${index + 1}`}
                 onPress={() => changeTheme(color)}
                 rightIcon={
                   <View

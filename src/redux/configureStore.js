@@ -24,6 +24,12 @@ import {reducerName as themesReducerName} from "./reducers/themes/actions"
 import conversionReducer from "./reducers/conversion"
 import {reducerName as conversionReducerName} from "./reducers/conversion/actions"
 
+import languagesReducer from "./reducers/languages"
+import {reducerName as languagesReducerName} from "./reducers/languages/actions"
+
+import navigationReducer from "./reducers/navigation"
+import {reducerName as navigationReducerName} from "./reducers/navigation/actions"
+
 export const saveAuthFilter = createFilter(authReducerName, ["login"])
 export const loadAuthFilter = createFilter(authReducerName, null, ["login"])
 
@@ -39,6 +45,18 @@ export const loadRatesFavFilter = createFilter(conversionReducerName, null, [
   "favorite",
 ])
 
+export const saveLangFilter = createFilter(languagesReducerName, ["language"])
+export const loadLangFilter = createFilter(languagesReducerName, null, [
+  "language",
+])
+
+export const saveNavigationFilter = createFilter(navigationReducerName, [
+  "navigation",
+])
+export const loadNavigationFilter = createFilter(navigationReducerName, null, [
+  "navigation",
+])
+
 const storageConfig = {
   key: "root",
   storage: AsyncStorage,
@@ -47,6 +65,8 @@ const storageConfig = {
     firstLoadReducerName,
     themesReducerName,
     conversionReducerName,
+    languagesReducerName,
+    navigationReducerName,
   ],
   transforms: [
     saveAuthFilter,
@@ -55,6 +75,10 @@ const storageConfig = {
     loadThemesFilter,
     saveRatesFavFilter,
     loadRatesFavFilter,
+    saveLangFilter,
+    loadLangFilter,
+    saveNavigationFilter,
+    loadNavigationFilter,
   ],
 }
 
@@ -65,6 +89,8 @@ const configureStore = (initialState = {}) => {
   reducerRegistery.register(userReducerName, userReducer)
   reducerRegistery.register(themesReducerName, themesReducer)
   reducerRegistery.register(conversionReducerName, conversionReducer)
+  reducerRegistery.register(languagesReducerName, languagesReducer)
+  reducerRegistery.register(navigationReducerName, navigationReducer)
 
   const reducers = persistCombineReducers(
     storageConfig,

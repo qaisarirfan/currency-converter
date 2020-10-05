@@ -1,0 +1,37 @@
+{
+    "common": {
+        "login": "Login",
+        "home": "Home",
+        "options": "Options",
+        "themes": "Themes",
+        "currency_list": "Currency list",
+        "ok": "Ok",
+        "required":"Required",
+        "back":"Back",
+        "languages":"Languages"
+    },
+    "login": {
+        "title": "Login",
+        "email": "Email",
+        "password": "Password",
+        "submit": "Submit",
+        "email_mismatch":"The email address that you've entered doesn't match any account.",
+        "invalid_email":"Invalid email"
+    },
+    "home": {
+        "title":"Home",
+        "reverse_currencies":"Reverse currencies",
+        "quote_currency": "Quote currency",
+        "base_currency":"Base currency",
+        "currency_converter":"Currency converter",
+        "converting":"Converting..."
+    },
+    "options":{
+        "title":"Options",
+        "logout":"Logout"
+    },
+    "themes":{
+        "title":"Themes",
+        "theme":"Theme"
+    }
+}

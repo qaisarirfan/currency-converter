@@ -1,0 +1,37 @@
+{
+    "common": {
+        "login": "لاگ اِن",
+        "home": "ہوم",
+        "options": "آپشنز",
+        "themes": "تھیمز",
+        "currency_list": "کرنسی کی فہرست",
+        "ok": "اوکے",
+        "required": "ضروری",
+        "back": "واپس",
+        "languages": "زبانیں"
+    },
+    "login": {
+        "title": "لاگ ان کریں",
+        "email": "ای میل",
+        "password": "پاس ورڈ",
+        "submit": "بھیجیں",
+        "email_mismatch": "آپ نے جو ای میل پتہ داخل کیا ہے وہ کسی بھی اکاؤنٹ سے مماثل نہیں ہے۔",
+        "invalid_email": "غلط ای میل"
+    },
+    "home": {
+        "title": "ہوم",
+        "reverse_currencies": "ریورس کرنسی",
+        "quote_currency": "حوالہ کرنسی",
+        "base_currency": "بنیادی کرنسی",
+        "currency_converter": "کرنسی کنورٹر",
+        "converting": "تبدیل ہو رہا ہے..."
+    },
+    "options": {
+        "title": "آپشنز",
+        "logout": "لاگ آؤٹ"
+    },
+    "themes": {
+        "title": "تھیمز",
+        "theme": "تھیم"
+    }
+}

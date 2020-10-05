@@ -106,7 +106,7 @@ exports[`<CurrencyList /> Does not explode 1`] = `
                 }
               }
             >
-              Back
+              common.back
             </Text>
           </View>
         </RNGestureHandlerButton>

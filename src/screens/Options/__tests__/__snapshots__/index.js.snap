@@ -106,7 +106,7 @@ exports[`<Options /> Does not explode 1`] = `
                 }
               }
             >
-              Back
+              common.back
             </Text>
           </View>
         </RNGestureHandlerButton>
@@ -132,7 +132,7 @@ exports[`<Options /> Does not explode 1`] = `
             }
           }
         >
-          mockConstructor
+          options.title
         </Text>
       </View>
       <View
@@ -183,7 +183,61 @@ exports[`<Options /> Does not explode 1`] = `
               }
             }
           >
-            Themes
+            common.themes
+          </Text>
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "#eaedef",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": "Entypo",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#8499a2",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "opacity": 1,
+              "paddingHorizontal": 20,
+              "paddingVertical": 16,
+            }
+          }
+          testID="languages"
+        >
+          <Text
+            style={
+              Object {
+                "color": "#eaedef",
+                "fontSize": 16,
+              }
+            }
+          >
+            common.languages
           </Text>
           <Text
             allowFontScaling={false}
@@ -237,7 +291,7 @@ exports[`<Options /> Does not explode 1`] = `
               }
             }
           >
-            Logout
+            options.logout
           </Text>
           <Text
             allowFontScaling={false}

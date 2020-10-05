@@ -153,7 +153,7 @@ exports[`<Login /> Does not explode 1`] = `
             autoCompleteType="email"
             onBlur={[Function]}
             onChangeText={[Function]}
-            placeholder="Email"
+            placeholder="login.email"
             placeholderTextColor="#00476E"
             rejectResponderTermination={true}
             style={
@@ -180,7 +180,7 @@ exports[`<Login /> Does not explode 1`] = `
             autoCapitalize="none"
             onBlur={[Function]}
             onChangeText={[Function]}
-            placeholder="Password"
+            placeholder="login.password"
             placeholderTextColor="#00476E"
             rejectResponderTermination={true}
             secureTextEntry={true}
@@ -235,7 +235,7 @@ exports[`<Login /> Does not explode 1`] = `
                 }
               }
             >
-              Submit
+              login.submit
             </Text>
           </View>
         </View>

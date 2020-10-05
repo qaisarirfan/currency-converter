@@ -4,8 +4,9 @@ import Entypo from "react-native-vector-icons/Entypo"
 import PropTypes from "prop-types"
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view"
 import {useNavigation} from "@react-navigation/native"
+import get from "lodash/get"
+import {useTranslation} from "react-i18next"
 
-import {get} from "lodash"
 import {KeyboardSpacer} from "../../components/KeyboardSpacer"
 import {ConversionInput} from "../../components/ConversionInput"
 import {ReverseButton} from "../../components/ReverseButton"
@@ -21,7 +22,7 @@ export const Home = () => {
   const [scrollEnabled, setScrollEnabled] = useState(false)
   const {styleableTheme} = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
-
+  const {t} = useTranslation()
   const [value, setValue] = useState("100")
 
   const {
@@ -42,7 +43,7 @@ export const Home = () => {
 
   const rate = get(conversionRate, "rate", 0)
   const inputValue = parseFloat(value) || 0
-  let convertedValue = "Converting..."
+  let convertedValue = t("home.converting")
 
   if (!loader) {
     convertedValue = (rate * inputValue).toFixed(2)
@@ -51,7 +52,7 @@ export const Home = () => {
   return (
     <View style={styles.root} testID="welcome">
       <HeaderBar
-        title="Home"
+        title={t("home.title")}
         isHeaderShow={false}
         rightContent={
           <TouchableOpacity
@@ -67,7 +68,7 @@ export const Home = () => {
         behavior="padding">
         <View style={styles.content}>
           <Logo />
-          <Text style={styles.textHeader}>Currency Converter</Text>
+          <Text style={styles.textHeader}>{t("home.currency_converter")}</Text>
           <View style={styles.inputContainer}>
             <ConversionInput
               keyboardType="numeric"
@@ -79,7 +80,7 @@ export const Home = () => {
                 navigate("Options", {
                   screen: "CurrencyList",
                   params: {
-                    title: "Base Currency",
+                    title: t("home.base_currency"),
                     isBaseCurrency: true,
                   },
                 })
@@ -94,13 +95,16 @@ export const Home = () => {
                 navigate("Options", {
                   screen: "CurrencyList",
                   params: {
-                    title: "Quote Currency",
+                    title: t("home.quote_currency"),
                     isBaseCurrency: false,
                   },
                 })
               }
             />
-            <ReverseButton text="Reverse Currencies" onPress={swapCurrency} />
+            <ReverseButton
+              text={t("home.reverse_currencies")}
+              onPress={swapCurrency}
+            />
             {loader ? <ActivityIndicator color="#fff" /> : null}
           </View>
           <KeyboardSpacer onToggle={(visible) => setScrollEnabled(visible)} />
