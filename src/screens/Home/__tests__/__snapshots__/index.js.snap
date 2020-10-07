@@ -154,12 +154,13 @@ exports[`<Home /> Does not explode 1`] = `
       >
         <View
           style={
-            Object {
-              "alignItems": "center",
-              "height": 225,
-              "justifyContent": "center",
-              "marginBottom": 40,
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+                "marginBottom": 40,
+              },
+            ]
           }
         >
           <Image
