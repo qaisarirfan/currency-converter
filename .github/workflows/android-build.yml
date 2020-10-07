@@ -11,6 +11,9 @@ jobs:
       - name: Install yarn dependencies
         run: |
           yarn install
+      - name: Jest unit tests
+        run: |
+          yarn run test
   build-android:
     needs: install-and-test
     runs-on: ubuntu-latest
