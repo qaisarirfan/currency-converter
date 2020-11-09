@@ -12085,10 +12085,10 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-native-bootsplash@^2.2.6:
-  version "2.2.6"
-  resolved "https://registry.npmjs.org/react-native-bootsplash/-/react-native-bootsplash-2.2.6.tgz#faa3e7ee0e467ec7c39482534aeb5173d9438ca4"
-  integrity sha512-d3+TsSGt8v3iPfCn1IfuZDdqB5sz/DzpjkRjQyfBHXfwKCIVOc2csauPkzVrygIXt/xReXSZjiovioKdF64ItA==
+react-native-bootsplash@^2.2.8:
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/react-native-bootsplash/-/react-native-bootsplash-2.2.8.tgz#4705f39889f1ed317224d5147564310976c6b846"
+  integrity sha512-ON9ghhDp6MNL1ybqVO0MHvyp9yfv6Ny3RnvMa7aBCBnlc+spDIZUvDvNsPruf8LZP/SY2WcxENHnu77GtjeFGw==
   dependencies:
     chalk "4.1.0"
     jimp "0.14.0"
