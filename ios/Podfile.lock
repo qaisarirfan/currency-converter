@@ -298,10 +298,10 @@ PODS:
     - React-Core (= 0.63.3)
     - React-cxxreact (= 0.63.3)
     - React-jsi (= 0.63.3)
-  - RNBootSplash (2.2.6):
+  - RNBootSplash (3.1.2):
     - React-Core
-  - RNCAsyncStorage (1.12.0):
-    - React
+  - RNCAsyncStorage (1.12.1):
+    - React-Core
   - RNCCheckbox (0.5.5):
     - React
   - RNCMaskedView (0.1.10):
@@ -501,8 +501,8 @@ SPEC CHECKSUMS:
   React-RCTText: 65a6de06a7389098ce24340d1d3556015c38f746
   React-RCTVibration: 8e9fb25724a0805107fc1acc9075e26f814df454
   ReactCommon: 4167844018c9ed375cc01a843e9ee564399e53c3
-  RNBootSplash: 6c2a4f7cf8a2d2f18043e11da177c95395da9f4b
-  RNCAsyncStorage: 2a692bcb9b69b76a2f1a95f33db057129700af64
+  RNBootSplash: a9544ba7f1a68b561e61e9efc68e2b3eec05dcef
+  RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCCheckbox: 5313bf49c2977c1c8f7135434fc01dc80f86bf0b
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNGestureHandler: 7a5833d0f788dbd107fbb913e09aa0c1ff333c39
@@ -514,4 +514,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 801502275c5d6769a92797628d77c2f9a1db0bfe
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
