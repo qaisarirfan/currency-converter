@@ -21,18 +21,13 @@ export const selectFavoriteCurrencies = (state) =>
 export const selectCurrencies = createSelector(
   selectRatesData,
   selectFavoriteCurrencies,
-  (rates, favorite) => {
-    return (
-      rates &&
-      rates.map((rate) => {
-        const index = findIndex(favorite, (fav) => {
-          return fav === rate.name
-        })
-        return {
-          ...rate,
-          isFavorite: index !== -1,
-        }
-      })
-    )
-  }
+  (rates, favorite) =>
+    rates &&
+    rates.map((rate) => {
+      const index = findIndex(favorite, (fav) => fav === rate.name)
+      return {
+        ...rate,
+        isFavorite: index !== -1,
+      }
+    })
 )

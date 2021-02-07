@@ -6,6 +6,8 @@ import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view"
 import {useNavigation} from "@react-navigation/native"
 import get from "lodash/get"
 import {useTranslation} from "react-i18next"
+import {useSelector} from "react-redux"
+import cc from "currency-codes"
 
 import {KeyboardSpacer} from "../../components/KeyboardSpacer"
 import {ConversionInput} from "../../components/ConversionInput"
@@ -15,6 +17,7 @@ import HeaderBar from "../../components/HeaderBar"
 import {ThemeContext} from "../../ContextUtils/ThemeContext"
 import {ConversionContext} from "../../ContextUtils/ConversionContext"
 import {Logo} from "../../components/Logo"
+import {selectFavoriteCurrencies} from "../../redux/reducers/conversion/selectors"
 
 // Home Component content
 export const Home = () => {
@@ -24,6 +27,7 @@ export const Home = () => {
   const styles = themeStyles(styleableTheme)
   const {t} = useTranslation()
   const [value, setValue] = useState("100")
+  const favoriteCurrencies = useSelector(selectFavoriteCurrencies)
 
   const {
     getRates,
@@ -40,6 +44,10 @@ export const Home = () => {
 
   const conversionRate =
     (rates && rates.find((rate) => rate.name === quoteCurrency)) || {}
+
+  const favConversion = favoriteCurrencies.map(
+    (currency) => (rates && rates.find((rate) => rate.name === currency)) || {}
+  )
 
   const rate = get(conversionRate, "rate", 0)
   const inputValue = parseFloat(value) || 0
@@ -107,6 +115,18 @@ export const Home = () => {
             />
             {loader ? <ActivityIndicator color="#fff" /> : null}
           </View>
+          {!loader && (
+            <View style={styles.listWrapper}>
+              {favConversion.map((v, i) => (
+                <View style={styles.list} key={`fav-${i}`}>
+                  <Text>{cc.code(v.name).currency}</Text>
+                  <Text>
+                    {v.name} {(v.rate * inputValue).toFixed(2) || ""}
+                  </Text>
+                </View>
+              ))}
+            </View>
+          )}
           <KeyboardSpacer onToggle={(visible) => setScrollEnabled(visible)} />
         </View>
       </KeyboardAwareScrollView>

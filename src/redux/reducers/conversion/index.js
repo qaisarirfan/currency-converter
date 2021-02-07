@@ -92,9 +92,7 @@ const reducers = {
   [TOGGLE_FAVORITE](state, payload) {
     const favorite = [...state.favorite]
 
-    const index = findIndex(state.favorite, (fav) => {
-      return fav === payload
-    })
+    const index = findIndex(state.favorite, (fav) => fav === payload)
 
     if (index === -1) {
       favorite.push(payload)

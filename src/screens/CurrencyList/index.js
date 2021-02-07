@@ -42,9 +42,7 @@ export const CurrencyList = () => {
     <View style={styles.root}>
       <HeaderBar title={title || name} />
       <FlatList
-        data={filter(rates, (rate) => {
-          return exclude !== rate.name
-        })}
+        data={filter(rates, (rate) => exclude !== rate.name)}
         renderItem={({item}) => {
           let selected = false
 
