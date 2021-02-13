@@ -7494,7 +7494,7 @@ fs-extra@^8.0.1, fs-extra@^8.1.0:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^9.0.0, fs-extra@^9.0.1:
+fs-extra@^9.0.0, fs-extra@^9.1.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.1.0.tgz#5954460c764a8da2094ba3554bf839e6b9a7c86d"
   integrity sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==
@@ -12223,13 +12223,13 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-native-bootsplash@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/react-native-bootsplash/-/react-native-bootsplash-3.1.2.tgz#17b80c3312b3fa6d5af0b76a41b80ffd33912ec9"
-  integrity sha512-Br2lCqKmJYYP3a/PjmQwI98u+Koiib5zxeRVGbQZ+YeU3shUOpFlTtaYUnHuxiZH91Qp7UqBlRg/u6NUrEm8RQ==
+react-native-bootsplash@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/react-native-bootsplash/-/react-native-bootsplash-3.1.4.tgz#ba71e534a77b11048aef7d2ecb5c6ff0a1d09c4d"
+  integrity sha512-Tko9baabjtcJYR6FerxbKzujNfEbT4TN6BHFI3dhnPXkMHJz+9M8GweizkIzMEGsAoNzaODtaGxEDJSLTrI2wg==
   dependencies:
     chalk "^4.1.0"
-    fs-extra "^9.0.1"
+    fs-extra "^9.1.0"
     jimp "^0.16.1"
 
 react-native-gesture-handler@^1.10.0:
