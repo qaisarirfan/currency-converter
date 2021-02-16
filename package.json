@@ -36,7 +36,7 @@
     "react-native-bootsplash": "^3.1.4",
     "react-native-gesture-handler": "^1.10.1",
     "react-native-keyboard-aware-scroll-view": "^0.9.3",
-    "react-native-localize": "^2.0.1",
+    "react-native-localize": "^2.0.2",
     "react-native-reanimated": "^1.13.2",
     "react-native-restart": "^0.0.20",
     "react-native-safe-area-context": "^3.1.9",
